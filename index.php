@@ -8,16 +8,41 @@ echo '<pre>';
 print_r($_POST);
 echo '</pre>';
 
+// Vereinfachung
+$year = 2020;
+
 // postvar Empfang
-$id = $_POST['id'] ?? 1;
+$id = $_POST['id'] ?? 0;
 $action = $_POST['action'] ?? '';
 $kw = $_POST['kw'] ?? 33;
 $thema = $_POST['thema'] ?? '';
 $eintrag = $_POST['eintrag'] ?? [];
 $doz = $_POST['doz'] ?? [];
 $bem = $_POST['bem'] ?? '';
+// bisher nur 1 Dozent pro Klassenbuch vorgesehen
+if (count($doz) === 0){
+    $doz[0] = '';
+}
 
-$year = 2020;
+// week-Ojekt aus Übergabevars erstellen
+$postWeek = new Week($id, $kw, $thema, $doz[0], $bem, $eintrag);
+
+// controller
+switch ($action){
+    case 'save':
+        $postWeek->save();
+        $week = $postWeek;
+        break;
+    case 'previous':
+
+        break;
+    case 'next':
+
+        break;
+    default:
+
+}
+
 $weekNo = 33;
 // Datum erstellen aus KW und Kalenderjahr
 $timestamp_montag = strtotime("{$year}-W{$weekNo}");
@@ -26,15 +51,13 @@ $date->add(new DateInterval('P1D'));
 
 $week = Week::getByWeekNo($weekNo);
 // Kalenderwoche Nummer
-$weekNo = $week->getWeek();
+$weekNo = $week->getWeekNo();
 // Tageseinträge
 $eintrag = $week->getEntrys();
 // Bememerkung
 $bem = $week->getNotice();
 // Dozent
 $doz = $week->getDoz();
-
-
 
 // Inhalte
 // Datum erzeugwn bis Freitag
@@ -45,8 +68,11 @@ for ($i = 1; $i < 5; $i++){
     $date->add(new DateInterval('P1D'));
     array_push($datum,$date->format('d.m.Y'));
 }
+
+// Thema
+$thema = $week->getModul();
 // Kalenderwoche Nummer
-$weekNo = $week->getWeek();
+$weekNo = $week->getWeekNo();
 // Tageseinträge
 $eintrag = $week->getEntrys();
 // Bememerkung
