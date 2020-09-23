@@ -146,15 +146,21 @@
 </head>
 <body>
 <div id="container">
+    <form method="post">
+        <input type="hidden" name="id" value="1">
+        <div id="next"><button type="submit" name="action" value="previous">vorige Woche</button></div>
+        <div id="next"><button type="submit" name="action" value="save">schonmal speichern</button></div>
+        <div id="next"><button type="submit" name="action" value="next">nächste Woche</button></div>
+
     <div id="thema"><input type="text" name="thema" value="Datenbanken"></div>
     <div id="kw"><input type="text" class="zahlen" name="kw" style="width: 40px;" value="33"></div>
-    <div id="datum0"><input type="text" class="zahlen" name="datum0" value="<?php echo $datum[0]; ?>"></div>
+    <div id="datum0"><input type="text" class="zahlen" value="<?php echo $datum[0]; ?>"></div>
     <div id="datum1"><input type="text" class="zahlen" value="<?php echo $datum[1]; ?>"></div>
     <div id="datum2"><input type="text" class="zahlen" value="<?php echo $datum[2]; ?>"></div>
     <div id="datum3"><input type="text" class="zahlen" value="<?php echo $datum[3]; ?>"></div>
     <div id="datum4"><input type="text" class="zahlen" value="<?php echo $datum[4]; ?>"></div>
     <!-- Bem -->
-    <div id="bem"><input type="text" style="width: 1500px;" value="<?php echo $bem; ?>"></div>
+    <div id="bem"><input type="text" name="bem" style="width: 1500px;" value="<?php echo $bem; ?>"></div>
     <!-- einträge -->
     <div id="eintrag0"><input name="eintrag[]" type="text" style="width: 1200px;" value="<?php echo $eintrag[0]; ?>"></div>
     <div id="eintrag1"><input name="eintrag[]" type="text" style="width: 1200px;" value="<?php echo $eintrag[1]; ?>"></div>
@@ -167,11 +173,12 @@
     <div id="eintrag8"><input name="eintrag[]" type="text" style="width: 1200px;" value="<?php echo $eintrag[8]; ?>"></div>
     <div id="eintrag9"><input name="eintrag[]" type="text" style="width: 1200px;" value="<?php echo $eintrag[9]; ?>"></div>
     <!-- Dozenten -->
-    <div id="doz1"> <input type="text" value="<?php echo $doz; ?>"></div>
-    <div id="doz2"> <input type="text" value="<?php echo $doz; ?>"></div>
-    <div id="doz3"> <input type="text" value="<?php echo $doz; ?>"></div>
-    <div id="doz4"> <input type="text" value="<?php echo $doz; ?>"></div>
-    <div id="doz5"> <input type="text" value="<?php echo $doz; ?>"></div>
+    <div id="doz1"> <input type="text" name="doz[]" value="<?php echo $doz; ?>"></div>
+    <div id="doz2"> <input type="text" name="doz[]" value="<?php echo $doz; ?>"></div>
+    <div id="doz3"> <input type="text" name="doz[]" value="<?php echo $doz; ?>"></div>
+    <div id="doz4"> <input type="text" name="doz[]" value="<?php echo $doz; ?>"></div>
+    <div id="doz5"> <input type="text" name="doz[]" value="<?php echo $doz; ?>"></div>
+    </form>
 </div>
 </body>
 </html>
