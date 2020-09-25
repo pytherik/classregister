@@ -25,7 +25,7 @@ class Week
      * @param string $notice
      * @param array $entrys
      */
-    public function __construct(int $id, int $weekNo, $modul, string $doz, string $notice, array $entrys)
+    public function __construct(int $id, int $weekNo, string $modul, string $doz, string $notice, array $entrys)
     {
         $this->id = $id;
         $this->weekNo = $weekNo;
@@ -43,18 +43,45 @@ class Week
      * @param string $notice
      * @param array $entrys
      */
-    public function create(int $weekNo, $modul, string $doz, string $notice, array $entrys)
+    public function create(int $weekNo, $modul, string $doz, string $notice, array $entrys) : Week
     {
         //$this->id = $id;
-        $this->weekNo = $weekNo;
-        $this->modul = $modul;
-        $this->doz = $doz;
-        $this->notice = $notice;
-        $this->entrys = $entrys;
+//        $this->weekNo = $weekNo;
+//        $this->modul = $modul;
+//        $this->doz = $doz;
+//        $this->notice = $notice;
+//        $this->entrys = $entrys;
+        try {
+            $dbh = Db::getConnection();
+            $sql = "INSERT INTO calweek 
+                    VALUES(NULL, :weekNo, :modul, :doz, :notice, :entry0, :entry1, :entry2, :entry3, :entry4, 
+                    :entry5, :entry6, :entry7, :entry8, :entry9)";
+            $sth = $dbh->prepare($sql); // $sth für PDOStatement (prepared Statement)
+            $sth->bindParam('weekNo', $weekNo, PDO::PARAM_INT);
+            $sth->bindParam('modul', $modul, PDO::PARAM_STR);
+            $sth->bindParam('doz', $doz, PDO::PARAM_STR);
+            $sth->bindParam('notice', $notice, PDO::PARAM_STR);
+            $sth->bindParam('entry0', $entrys[0], PDO::PARAM_STR);
+            $sth->bindParam('entry1', $entrys[1], PDO::PARAM_STR);
+            $sth->bindParam('entry2', $entrys[2], PDO::PARAM_STR);
+            $sth->bindParam('entry3', $entrys[3], PDO::PARAM_STR);
+            $sth->bindParam('entry4', $entrys[4], PDO::PARAM_STR);
+            $sth->bindParam('entry5', $entrys[5], PDO::PARAM_STR);
+            $sth->bindParam('entry6', $entrys[6], PDO::PARAM_STR);
+            $sth->bindParam('entry7', $entrys[7], PDO::PARAM_STR);
+            $sth->bindParam('entry8', $entrys[8], PDO::PARAM_STR);
+            $sth->bindParam('entry9', $entrys[9], PDO::PARAM_STR);
 
-        // Insert into db
-        // insert_id auslesen
-        // und diesem Objekt zuweisen
+            $sth->execute();
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+        // falls id benötigt wird
+        // $id = $dbh->lastInsertId();
+        echo 'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWS<pre>';
+        print_r(Week::getByWeekNo($weekNo));
+        echo '</pre>';
+        return Week::getByWeekNo($weekNo);
     }
 
     /**
@@ -65,16 +92,33 @@ class Week
         return $this->id;
     }
 
-    public static function getByWeekNo(int $weekNo): Week
+    public static function getByWeekNo(int $weekNo = null): Week
     {
         try {
             $dbh = Db::getConnection();
-            // datenbank abfragen
-            $sql = 'SELECT * FROM calweek WHERE weekNo = :weekNo';
-            $sth = $dbh->prepare($sql); // $sth für PDOStatement (prepared Statement)
-            $sth->bindParam('weekNo', $weekNo, PDO::PARAM_INT);
+            // datenbank
+            if (isset($weekNo)) {
+                $sql = 'SELECT * FROM calweek WHERE weekNo = :weekNo';
+                $sth = $dbh->prepare($sql); // $sth für PDOStatement (prepared Statement)
+                $sth->bindParam('weekNo', $weekNo, PDO::PARAM_INT);
+            } else {
+                // letzte Eintragswoche ausgeben
+                $sql = 'SELECT * FROM calweek WHERE id = 
+                            (SELECT MAX(id) FROM calwwek)
+                        ';
+                $sth = $dbh->prepare($sql); // $sth für PDOStatement
+            }
             $sth->execute();
             $calWeeks = $sth->fetchAll(PDO::FETCH_FUNC, 'week::buildFromPDO');
+            // wenn es noch keine Daten in der db gibt, werden sie erstellt & gespeichert
+            if (count($calWeeks) === 0) {
+                // Falls es noch gar keine Woche in db gibt
+                $weekNo = $weekNo ?? 19;
+                // leere Woche in db erstellen
+
+                $calWeeks[0] = Week::create($weekNo, '', '', '', ['', '', '', '', '', '', '', '', '', '', '']);
+            }
+
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
@@ -133,19 +177,19 @@ class Week
 
     public function save()
     {
-        switch ($this->getId()) {
+        switch (isset($this->Id)) {
             // DS ist noch nicht in db enthalten
             case 0:
-               // $this->update();
+                $this->update();
                 break;
             // DS wurde geändert
             default:
-                $this->update();
+              //  $this->update();
         }
     }
 
-    private function update() : void
-    {
+    private function update(): void
+    { echo "190 {$this->modul}";
         try {
             $dbh = Db::getConnection();
             // datenbank abfragen
@@ -182,10 +226,12 @@ class Week
             $sth->bindParam('entry9', $this->getEntrys()[9], PDO::PARAM_STR);
             $sth->bindParam('id', $this->id, PDO::PARAM_INT);
 
-            $sth->execute();
+            echo $this->modul . '227 ' . $sth->execute();
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
 
     }
+
+
 }

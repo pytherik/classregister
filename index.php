@@ -14,7 +14,7 @@ $year = 2020;
 // postvar Empfang
 $id = $_POST['id'] ?? 0;
 $action = $_POST['action'] ?? '';
-$kw = $_POST['kw'] ?? 33;
+$kw = $_POST['kw'] ?? 1;
 $thema = $_POST['thema'] ?? '';
 $eintrag = $_POST['eintrag'] ?? [];
 $doz = $_POST['doz'] ?? [];
@@ -30,20 +30,25 @@ $postWeek = new Week($id, $kw, $thema, $doz[0], $bem, $eintrag);
 // controller
 switch ($action){
     case 'save':
+        // Übergabewoche
         $postWeek->save();
-        $week = $postWeek;
-        break;
-    case 'previous':
-
+        // neu auszugebende Woche
+        $newWeek = Week::getByWeekNo($kw);
         break;
     case 'next':
-
+        $postWeek->save();
+        $newWeek = Week::getByWeekNo($kw + 1);
+        break;
+    case 'previous':
+        $postWeek->save();
+        $newWeek = Week::getByWeekNo($kw - 1);
         break;
     default:
-
+        $newWeek = Week::getByWeekNo();
 }
 
-$weekNo = 33;
+$weekNo = $newWeek->getWeekNo();
+
 // Datum erstellen aus KW und Kalenderjahr
 $timestamp_montag = strtotime("{$year}-W{$weekNo}");
 $date = new DateTime('@' . $timestamp_montag);
@@ -80,7 +85,7 @@ $bem = $week->getNotice();
 // Dozent
 $doz = $week->getDoz();
 
-//Layoutwerte
+//Layoutwerte (für CSS)
 $themaLeft = 400;
 $themaKwTop = 355;
 $kwLeft = 2100;

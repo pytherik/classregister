@@ -147,13 +147,13 @@
 <body>
 <div id="container">
     <form method="post">
-        <input type="hidden" name="id" value="1">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
         <div id="next"><button type="submit" name="action" value="previous">vorige Woche</button></div>
         <div id="next"><button type="submit" name="action" value="save">schonmal speichern</button></div>
         <div id="next"><button type="submit" name="action" value="next">nächste Woche</button></div>
 
     <div id="thema"><input type="text" name="thema" value="<?php echo $thema; ?>"></div>
-    <div id="kw"><input type="text" class="zahlen" name="kw" style="width: 40px;" value="33"></div>
+    <div id="kw"><input type="text" class="zahlen" name="kw" style="width: 40px;" value="<?php echo $weekNo; ?>"></div>
     <div id="datum0"><input type="text" class="zahlen" value="<?php echo $datum[0]; ?>"></div>
     <div id="datum1"><input type="text" class="zahlen" value="<?php echo $datum[1]; ?>"></div>
     <div id="datum2"><input type="text" class="zahlen" value="<?php echo $datum[2]; ?>"></div>
