@@ -4,9 +4,11 @@ include 'config.php';
 spl_autoload_register(function ($class){
     include 'class/' . $class . '.php';
 });
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+
+//nur zum Testen
+//echo '<pre>';
+//print_r($_POST);
+//echo '</pre>';
 
 // Vereinfachung
 $year = 2020;
@@ -22,26 +24,6 @@ $bem = $_POST['bem'] ?? '';
 
 // week-Objekt aus Übergabevars erstellen
 $postWeek = new Week($id, $kw, $thema, $doz[0], $bem, $eintrag);
-
-// controller
-//switch ($action){
-//    case 'save':
-//        // Übergabewoche
-//        $postWeek->save();
-//        // neu auszugebende Woche
-//        $newWeek = Week::getByWeekNo($kw);
-//        break;
-//    case 'next':
-//        $postWeek->save();
-//        $newWeek = Week::getByWeekNo($kw + 1);
-//        break;
-//    case 'previous':
-//        $postWeek->save();
-//        $newWeek = Week::getByWeekNo($kw - 1);
-//        break;
-//    default:
-//        $newWeek = Week::getByWeekNo();
-//}
 
 // controller
 // benötigt Week-Objekt $postWeek - mit den Daten aus der gesendeten Woche
@@ -65,6 +47,7 @@ switch ($action){
         $requestWeek = $postWeek->getLastOrStandardWeek($postWeek);
 }
 
+// aus $postWeek werden die anzuzeigenden Daten aufbereitet
 // id ist PK
 $id = $requestWeek->getId();
 // Unterrichtsmodul
@@ -77,14 +60,17 @@ $eintrag = $requestWeek->getEntrys();
 $bem = $requestWeek->getNotice();
 // Dozent
 $doz = $requestWeek->getDoz();
-
+print_r($year. " " . $weekNo);
 // Datum erstellen aus KW und Kalenderjahr für jeweiliges Tagesdatum
-$timestamp_montag = strtotime("{$year}-W{$weekNo}");
+// Wochenzahl muss 2-stellig sein
+if ($weekNo < 10){
+    $weekNo2digits = '0' . $weekNo;
+} else {
+    $weekNo2digits = '' . $weekNo;
+}
+$timestamp_montag = strtotime("{$year}-W{$weekNo2digits}");
 $date = new DateTime('@' . $timestamp_montag);
 $date->add(new DateInterval('P1D'));
-
-
-// Inhalte
 // Datum erzeugen bis Freitag
 $datum = [];
 //$date = new DateTime('2020-09-19');
@@ -105,9 +91,9 @@ $eintragLeft = 570;
 $eintragTop = 559;
 $eintragDiffTop = 155;
 $bemTop = 1400;
-
 $dozLeft = 2000;
 $dozTop = 599;
 
+// Ausgabeseite einbinden
 include 'view/oneweek.php';
 ?>
