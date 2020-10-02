@@ -9,7 +9,31 @@
             background-color: white;
             background-image: url("img/Klassenbuch.png");
         }
-
+        @media print
+        {
+            .no-print, .no-print *
+            {
+                display: none !important;
+            }
+        }
+        #next{
+            position: absolute;
+            left: 1000px;
+            top: 50px;
+        }
+        #previous{
+            position: absolute;
+            left: 150px;
+            top: 50px;
+        }
+        #save{
+            position: absolute;
+            left: 500px;
+            top: 50px;
+        }
+        .navtext{
+            font-size: 40px;
+        }
         #thema {
             position: absolute;
             left: <?php echo $themaLeft; ?>px;
@@ -163,14 +187,14 @@
 <div id="container">
     <form method="post">
         <input type="hidden" name="id" value="<?php echo $id; ?>">
-        <div id="next">
-            <button type="submit" name="action" value="previous">vorige Woche</button>
+        <div id="previous" class="no-print">
+            <button type="submit" name="action" value="previous" class="navtext"><= vorige Woche</button>
         </div>
-        <div id="next">
-            <button type="submit" name="action" value="save">schonmal speichern</button>
+        <div id="save" class="no-print">
+            <button type="submit" name="action" value="save" class="navtext">schonmal in db speichern</button>
         </div>
-        <div id="next">
-            <button type="submit" name="action" value="next">nächste Woche</button>
+        <div id="next" class="no-print">
+            <button type="submit" name="action" value="next" class="navtext">nächste Woche =></button>
         </div>
 
         <div id="thema"><input type="text" name="thema" value="<?php echo $thema; ?>"></div>

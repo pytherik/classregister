@@ -1,4 +1,5 @@
 <?php
+define('VERSION', 1.0);
 // Datenbankverbindungsdaten
 define("DB_DSN",'mysql:dbname=classregister;host=localhost');
 define("DB_USER",'root');

@@ -60,7 +60,7 @@ $eintrag = $requestWeek->getEntrys();
 $bem = $requestWeek->getNotice();
 // Dozent
 $doz = $requestWeek->getDoz();
-print_r($year. " " . $weekNo);
+
 // Datum erstellen aus KW und Kalenderjahr für jeweiliges Tagesdatum
 // Wochenzahl muss 2-stellig sein
 if ($weekNo < 10){
