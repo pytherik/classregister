@@ -168,7 +168,7 @@ class Week
         switch ($id) {
             // DS ist noch nicht in db enthalten
             case 0:
-                $requestWeek = $this->create($this->getWeekNo, $this->getModul, $this->getDoz, $this->getNotice, $this->getEntrys);
+                $requestWeek = $this->create($this->getWeekNo(), $this->getModul(), $this->getDoz(), $this->getNotice(), $this->getEntrys());
                 break;
             // DS wurde geändert
             default:

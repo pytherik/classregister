@@ -11,7 +11,7 @@ spl_autoload_register(function ($class){
 //echo '</pre>';
 
 // Vereinfachung
-$year = 2020;
+$year = 2021;
 
 // postVar Empfang
 $id = $_POST['id'] ?? 0; // ist bzw. PK vom Week-Objekt
@@ -24,6 +24,7 @@ $bem = $_POST['bem'] ?? '';
 
 // week-Objekt aus Übergabevars erstellen
 $postWeek = new Week($id, $kw, $thema, $doz[0], $bem, $eintrag);
+//echo '<pre>'; print_r($postWeek); echo '</pre>';
 
 // controller
 // benötigt Week-Objekt $postWeek - mit den Daten aus der gesendeten Woche
