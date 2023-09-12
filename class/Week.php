@@ -43,7 +43,7 @@ class Week
      * @param string $notice
      * @param array $entrys
      */
-    public function create(int $weekNo, $modul, string $doz, string $notice, array $entrys): Week
+    public static function create(int $weekNo, $modul, string $doz, string $notice, array $entrys): Week
     {
         try {
             $dbh = Db::getConnection();
@@ -66,7 +66,7 @@ class Week
             $sth->bindParam('entry8', $entrys[8], PDO::PARAM_STR);
             $sth->bindParam('entry9', $entrys[9], PDO::PARAM_STR);
 
-            $sth->execute();
+            $dummy = $sth->execute();
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
@@ -101,7 +101,6 @@ class Week
                 // Falls es noch gar keine Woche in db gibt
                 // $weekNo = $weekNo ?? 19;
                 // leere Woche in db erstellen
-
                 $calWeeks[0] = Week::create($weekNo, '', '', '', ['', '', '', '', '', '', '', '', '', '', '']);
             }
 
@@ -238,7 +237,7 @@ class Week
             // wenn es noch keine Daten in der db gibt, werden sie erstellt & gespeichert
             if (count($calWeeks) === 0) {
                 // Falls es noch gar keine Woche in db gibt
-                $weekNo = $weekNo ?? 19;
+                $weekNo = $weekNo ?? 1;
                 // leere Woche in db erstellen
                 $calWeeks[0] = Week::create($weekNo, '', '', '', ['', '', '', '', '', '', '', '', '', '', '']);
             }

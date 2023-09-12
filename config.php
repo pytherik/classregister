@@ -1,10 +1,13 @@
 <?php
-define('VERSION', 1.0);
+const VERSION = 1.0;
 // Datenbankverbindungsdaten
-define("DB_DSN",'mysql:dbname=classregister2;host=localhost');
-define("DB_USER",'root');
-define("DB_PASSWD",'toor');
+const DB_DSN = 'mysql:dbname=classregister;host=localhost';
+const DB_USER = 'erik';
+const DB_PASSWD = '321null';
 
 // letzte Woche und erste Woche im Jahr
-define('MAXWEEKNO', 53);
-define('MINWEEKNO', 1);
+const MAXWEEKNO = 53;
+const MINWEEKNO = 1;
+
+// jedes Jahr neu
+const YEAR = 2023;

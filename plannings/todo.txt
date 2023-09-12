@@ -1,0 +1,25 @@
+refactoring:
+
+db
+Bezeichnungen verdeutlichen:
+doz -> teacher
+Tageseinträge in separate Tabelle
+
+lesson: id FK:calweekId weekday amContent pmContent
+
+app
+
+Klasse Lesson erstellen
+- CRUD
+- getLessonsByCalWeekId
+- createLessons Param calWeekId, 10 Einträge für lesson
+
+bisherige Klasse anpassen
+
+- Array mit lessons
+- getEntrys -> getLessons
+
+view
+
+$thema -> $modul
+$bem   -> $notice
