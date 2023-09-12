@@ -3,8 +3,8 @@
 enum Weekday
 {
     case montag;
-    case diesntag;
-    case mitwoch;
+    case dienstag;
+    case mittwoch;
     case donnerstag;
     case freitag;
 
