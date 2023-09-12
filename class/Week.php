@@ -83,7 +83,6 @@ class Week
         }
         // falls id benötigt wird
         // $id = $dbh->lastInsertId();
-
         return Week::getByWeekNo($weekNo);
     }
 
