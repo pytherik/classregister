@@ -1,5 +1,6 @@
 <?php
-include 'config.php';
+
+include 'config.local.php';
 spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
@@ -51,7 +52,7 @@ $thema = $requestWeek->getModul();
 // Kalenderwoche Nummer
 $weekNo = $requestWeek->getWeekNo();
 // Tageseinträge
-$eintrag = $requestWeek->getEntrys();
+$eintrag = $requestWeek->getLession();
 // Bememerkung
 $bem = $requestWeek->getNotice();
 // Dozent
@@ -97,4 +98,4 @@ $dozTop = 599;
 
 // Ausgabeseite einbinden
 include 'view/oneweek.php';
-?>
+
