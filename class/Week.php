@@ -132,28 +132,7 @@ class Week
                 // leere Woche in db erstellen
                 $calWeeks[0] = Week::create($weekNo, '', '', '', []);
             }
-            $lastID = $dbh->lastInsertId();
 
-            $lesson = new Lesson();
-            // $lessons leer, dann schreibe im SQL 10 leere Einträge
-            if (count($lessons) === 0) {
-                $lessons = ['', '', '', '', '', '', '', '', '', ''];
-                $lesson->createLessons($lastID, '', '', '', '', '', '', '', '', '', '');
-            } else {
-                $lesson->createLessons(
-                    $lastID,
-                    $lessons[0]->getAmContent(),
-                    $lessons[0]->getPmContent(),
-                    $lessons[1]->getAmContent(),
-                    $lessons[1]->getPmContent(),
-                    $lessons[2]->getAmContent(),
-                    $lessons[2]->getPmContent(),
-                    $lessons[3]->getAmContent(),
-                    $lessons[3]->getPmContent(),
-                    $lessons[4]->getAmContent(),
-                    $lessons[4]->getPmContent()
-                );
-            }
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
