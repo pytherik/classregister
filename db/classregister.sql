@@ -1,6 +1,9 @@
-DROP DATABASE IF EXISTS classregister;
-CREATE DATABASE classregister;
-USE classregister;
+DROP
+DATABASE IF EXISTS buch;
+CREATE
+DATABASE buch;
+USE
+buch;
 
 CREATE TABLE calweek (id INT PRIMARY KEY AUTO_INCREMENT, weekNo INT NOT NULL, modul VARCHAR(45),
     doz VARCHAR(45), notice VARCHAR(65), entry0 VARCHAR(65), entry1 VARCHAR(65), entry2 VARCHAR(65),

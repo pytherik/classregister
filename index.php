@@ -48,15 +48,15 @@ switch ($action) {
 // id ist PK
 $id = $requestWeek->getId();
 // Unterrichtsmodul
-$thema = $requestWeek->getModul();
+$thema = $requestWeek->getModule();
 // Kalenderwoche Nummer
 $weekNo = $requestWeek->getWeekNo();
 // Tageseinträge
-$eintrag = $requestWeek->getLession();
+$eintrag = $requestWeek->getLessonsByCalWeekId();
 // Bememerkung
 $bem = $requestWeek->getNotice();
 // Dozent
-$doz = $requestWeek->getDoz();
+$doz = $requestWeek->getTeacher();
 
 // Datum erstellen aus KW und Kalenderjahr für jeweiliges Tagesdatum
 // Wochenzahl muss 2-stellig sein

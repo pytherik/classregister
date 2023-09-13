@@ -209,25 +209,35 @@
         <div id="bem"><input type="text" name="bem" style="width: 1500px;" value="<?php echo $bem; ?>"></div>
         <!-- einträge -->
         <div id="eintrag0"><input name="eintrag[]" type="text" style="width: 1200px;"
-                                  value="<?php echo $eintrag[0]; ?>"></div>
+                                  value="<?php
+                                  echo $eintrag[0]->getAmContent(); ?>"></div>
         <div id="eintrag1"><input name="eintrag[]" type="text" style="width: 1200px;"
-                                  value="<?php echo $eintrag[1]; ?>"></div>
+                                  value="<?php
+                                  echo $eintrag[0]->getPmContent(); ?>"></div>
         <div id="eintrag2"><input name="eintrag[]" style="width: 1200px;" type="text"
-                                  value="<?php echo $eintrag[2]; ?>"></div>
+                                  value="<?php
+                                  echo $eintrag[1]->getAmContent(); ?>"></div>
         <div id="eintrag3"><input name="eintrag[]" type="text" style="width: 1200px;"
-                                  value="<?php echo $eintrag[3]; ?>"></div>
+                                  value="<?php
+                                  echo $eintrag[1]->getPmContent(); ?>"></div>
         <div id="eintrag4"><input name="eintrag[]" type="text" style="width: 1200px;"
-                                  value="<?php echo $eintrag[4]; ?>"></div>
+                                  value="<?php
+                                  echo $eintrag[2]->getAmContent(); ?>"></div>
         <div id="eintrag5"><input name="eintrag[]" type="text" style="width: 1200px;"
-                                  value="<?php echo $eintrag[5]; ?>"></div>
+                                  value="<?php
+                                  echo $eintrag[2]->getPmContent(); ?>"></div>
         <div id="eintrag6"><input name="eintrag[]" type="text" style="width: 1200px;"
-                                  value="<?php echo $eintrag[6]; ?>"></div>
+                                  value="<?php
+                                  echo $eintrag[3]->getAmContent(); ?>"></div>
         <div id="eintrag7"><input name="eintrag[]" type="text" style="width: 1200px;"
-                                  value="<?php echo $eintrag[7]; ?>"></div>
+                                  value="<?php
+                                  echo $eintrag[3]->getPmContent(); ?>"></div>
         <div id="eintrag8"><input name="eintrag[]" type="text" style="width: 1200px;"
-                                  value="<?php echo $eintrag[8]; ?>"></div>
+                                  value="<?php
+                                  echo $eintrag[4]->getAmContent(); ?>"></div>
         <div id="eintrag9"><input name="eintrag[]" type="text" style="width: 1200px;"
-                                  value="<?php echo $eintrag[9]; ?>"></div>
+                                  value="<?php
+                                  echo $eintrag[4]->getPmContent(); ?>"></div>
         <!-- Dozenten -->
         <div id="doz1"><input type="text" name="doz[]" value="<?php echo $doz; ?>"></div>
         <div id="doz2"><input type="text" name="doz[]" value="<?php echo $doz; ?>"></div>
