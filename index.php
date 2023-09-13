@@ -52,11 +52,11 @@ $thema = $requestWeek->getModule();
 // Kalenderwoche Nummer
 $weekNo = $requestWeek->getWeekNo();
 // Tageseinträge
-$eintrag = $requestWeek->getLessons();
+$eintrag = $requestWeek->getLessonsByCalWeekId();
 // Bememerkung
 $bem = $requestWeek->getNotice();
 // Dozent
-$doz = $requestWeek->getTeachers();
+$doz = $requestWeek->getTeacher();
 
 // Datum erstellen aus KW und Kalenderjahr für jeweiliges Tagesdatum
 // Wochenzahl muss 2-stellig sein
