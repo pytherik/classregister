@@ -1,9 +1,9 @@
 DROP
-DATABASE IF EXISTS buch;
+DATABASE IF EXISTS classregister;
 CREATE
-DATABASE buch;
+DATABASE classregister;
 USE
-buch;
+classregister;
 
 CREATE TABLE calweek (
     id INT PRIMARY KEY AUTO_INCREMENT,

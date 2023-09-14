@@ -1,7 +1,7 @@
 <?php
 const VERSION = 1.0;
 // Datenbankverbindungsdaten
-const DB_DSN = 'mysql:dbname=classregister;host=localhost';
+const DB_DSN = 'mysql:dbname=buch;host=localhost';
 const DB_USER = 'root';
 const DB_PASSWD = '';
 
