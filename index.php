@@ -1,6 +1,6 @@
 <?php
 
-include 'config.local.php';
+include 'config.php'; // todo: vorm pushen ändern
 spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });

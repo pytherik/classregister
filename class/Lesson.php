@@ -135,9 +135,6 @@ class Lesson
         $sth->bindParam('amContent', $amContent5, PDO::PARAM_STR);
         $sth->bindParam('pmContent', $pmContent5, PDO::PARAM_STR);
         $sth->execute();
-
-
-
     }
 
 }
