@@ -242,20 +242,18 @@ class Week
             $sth->bindParam('id', $this->id, PDO::PARAM_INT);
             $sth->execute();
             $l = new Lesson();
-//test
-
             $l->update(
                 $this->id,
                 $this->lessons[0],
                 $this->lessons[1],
-                 $this->lessons[2],
-                 $this->lessons[3],
-                 $this->lessons[4],
-                 $this->lessons[5],
-                 $this->lessons[6],
-                 $this->lessons[7],
-                 $this->lessons[8],
-                 $this->lessons[9]
+                $this->lessons[2],
+                $this->lessons[3],
+                $this->lessons[4],
+                $this->lessons[5],
+                $this->lessons[6],
+                $this->lessons[7],
+                $this->lessons[8],
+                $this->lessons[9]
             );
 
         } catch (PDOException $e) {

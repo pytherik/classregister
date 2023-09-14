@@ -144,16 +144,16 @@ class Lesson
                                   string $amContent5, string  $pmContent5) : void
     {
         $dbh = Db::getConnection();
-        $sql = "UPDATE lesson SET amContent=:amContent, 
-                  pmContent=:pmContent
-                  WHERE calWeekId=:calweekId AND weekday=:weekday";
+        $sql = "UPDATE lesson SET amContent= :amContent, " .
+                  "pmContent= :pmContent " .
+                  "WHERE calweekId=:calweekId AND weekday=:weekday";
         $sth = $dbh->prepare($sql);
         $sth->bindParam('calweekId', $calWeekId, PDO::PARAM_INT);
 
         $weekday = 'montag';
-        $sth->bindParam(':weekday', $weekday, PDO::PARAM_STR);
-        $sth->bindParam(':amContent', $amContent1, PDO::PARAM_STR);
-        $sth->bindParam(':pmContent', $pmContent1, PDO::PARAM_STR);
+        $sth->bindParam('weekday', $weekday, PDO::PARAM_STR);
+        $sth->bindParam('amContent', $amContent1, PDO::PARAM_STR);
+        $sth->bindParam('pmContent', $pmContent1, PDO::PARAM_STR);
         $sth->execute();
 
         $weekday = 'dienstag';
@@ -180,50 +180,5 @@ class Lesson
         $sth->bindParam('pmContent', $pmContent5, PDO::PARAM_STR);
         $sth->execute();
     }
-
-//    public function update(int $calWeekId,
-//                           string $amContent1, string  $pmContent1,
-//                           string $amContent2, string  $pmContent2,
-//                           string $amContent3, string  $pmContent3,
-//                           string $amContent4, string  $pmContent4,
-//                           string $amContent5, string  $pmContent5){
-//
-//
-//        $dbh = Db::getConnection();
-//        $sql = 'UPDATE  lesson SET  calWeekId=:calWeekId, weekday=:weekday, amContent=:amContent,pmContent=:pmContent WHERE $calWeekId = :id';
-//        $sth = $dbh->prepare($sql);
-//        $weekday = 'montag';
-//        $sth->bindParam('calWeekId', $calWeekId, PDO::PARAM_INT);
-//        $sth->bindParam('weekday', $weekday, PDO::PARAM_STR);
-//        $sth->bindParam('amContent', $amContent1, PDO::PARAM_STR);
-//        $sth->bindParam('pmContent', $pmContent1, PDO::PARAM_STR);
-//        $sth->execute();
-//
-//        $weekday = 'dienstag';
-//        $sth->bindParam('weekday', $weekday, PDO::PARAM_STR);
-//        $sth->bindParam('amContent', $amContent2, PDO::PARAM_STR);
-//        $sth->bindParam('pmContent', $pmContent2, PDO::PARAM_STR);
-//        $sth->execute();
-//
-//        $weekday = 'mittwoch';
-//        $sth->bindParam('calWeekId', $calWeekId, PDO::PARAM_INT);
-//        $sth->bindParam('weekday', $weekday, PDO::PARAM_STR);
-//        $sth->bindParam('amContent', $amContent3, PDO::PARAM_STR);
-//        $sth->bindParam('pmContent', $pmContent3, PDO::PARAM_STR);
-//        $sth->execute();
-//
-//        $weekday = 'donnerstag';
-//        $sth->bindParam('weekday', $weekday, PDO::PARAM_STR);
-//        $sth->bindParam('amContent', $amContent4, PDO::PARAM_STR);
-//        $sth->bindParam('pmContent', $pmContent4, PDO::PARAM_STR);
-//        $sth->execute();
-//
-//        $weekday = 'freitag';
-//        $sth->bindParam('weekday', $weekday, PDO::PARAM_STR);
-//        $sth->bindParam('amContent', $amContent5, PDO::PARAM_STR);
-//        $sth->bindParam('pmContent', $pmContent5, PDO::PARAM_STR);
-//        $sth->execute();
-//
-//    }
 
 }
