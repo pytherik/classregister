@@ -242,7 +242,7 @@ class Week
             $sth->bindParam('id', $this->id, PDO::PARAM_INT);
             $sth->execute();
             $l = new Lesson();
-
+//test
             $l->update(
                 $this->id,
                 $this->lessons[0],
