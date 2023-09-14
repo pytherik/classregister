@@ -25,6 +25,33 @@ class Lesson
      */
     private string $pmContent;
 
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getWeekday(): string
+    {
+        return $this->weekday;
+    }
+
+    public function getAmContent(): string
+    {
+        return $this->amContent;
+    }
+
+    public function getPmContent(): string
+    {
+        return $this->pmContent;
+    }
+
+    public function getCalweekId(): ?int
+    {
+        return $this->calweekId;
+    }
+
+
+
     /**
      * @param int|null $id
      * @param int|null $calweekId
@@ -108,9 +135,6 @@ class Lesson
         $sth->bindParam('amContent', $amContent5, PDO::PARAM_STR);
         $sth->bindParam('pmContent', $pmContent5, PDO::PARAM_STR);
         $sth->execute();
-
-
-
     }
 
 }

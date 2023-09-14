@@ -3,6 +3,7 @@ refactoring:
 db
 Bezeichnungen verdeutlichen:
 doz -> teacher
+
 Tageseinträge in separate Tabelle
 
 lesson: id FK:calweekId weekday amContent pmContent

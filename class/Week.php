@@ -8,71 +8,93 @@ class Week
     // Woche
     private int $weekNo;
     // Thema
-    private $modul;
+    private string $module;
     // Dozent
-    private string $doz;
+    private string $teacher;
     // Bemerkung
     private string $notice;
-    // 10 string Einträge
-    private $entrys = [];
+
+    private array $lessons = [];
+
 
     /**
-     * week constructor.
-     * @param int $id
-     * @param int $weekNo
-     * @param $modul
-     * @param string $doz
-     * @param string $notice
-     * @param array $entrys
+     * Class Constructor
+     *
+     * @param int|null $id The ID of the class
+     * @param int|null $weekNo The week number of the class
+     * @param string|null $module The module of the class
+     * @param string|null $teacher The teacher of the class
+     * @param string|null $notice The notice for the class
+     * @param array|null $lessons The lessons for the class
      */
-    public function __construct(int $id, int $weekNo, string $modul, string $doz, string $notice, array $entrys)
-    {
-        $this->id = $id;
-        $this->weekNo = $weekNo;
-        $this->modul = $modul;
-        $this->doz = $doz;
-        $this->notice = $notice;
-        $this->entrys = $entrys;
+    public function __construct(
+        int $id = null,
+        int $weekNo = null,
+        string $module = null,
+        string $teacher = null,
+        string $notice = null,
+        array $lessons = null
+    ) {
+        if ($id === null) {
+        } else {
+            $this->id = $id;
+            $this->weekNo = $weekNo;
+            $this->module = $module;
+            $this->teacher = $teacher;
+            $this->notice = $notice;
+            $this->lessons = $lessons;
+        }
     }
 
     /**
-     * week creater
-     * @param int $weekNo
-     * @param $modul
-     * @param string $doz
-     * @param string $notice
-     * @param array $entrys
+     * Creates a new Week entry in the database with the given parameters.
+     *
+     * @param int $weekNo The week number.
+     * @param string $module The module name.
+     * @param string $teacher The teacher name.
+     * @param string $notice Any additional notice for the week.
+     * @param array $lessons An array of Lesson objects for the week.
+     * @return Week The newly created Week object.
      */
-    public static function create(int $weekNo, $modul, string $doz, string $notice, array $entrys): Week
+    public static function create(int $weekNo, string $module, string $teacher, string $notice, array $lessons): Week
     {
         try {
             $dbh = Db::getConnection();
-            $sql = "INSERT INTO calweek 
-                    VALUES(NULL, :weekNo, :modul, :doz, :notice, :entry0, :entry1, :entry2, :entry3, :entry4, 
-                    :entry5, :entry6, :entry7, :entry8, :entry9)";
+            $sql = "INSERT INTO calweek VALUES(NULL, :weekNo, :module, :teacher, :notice)";
             $sth = $dbh->prepare($sql); // $sth für PDOStatement (prepared Statement)
             $sth->bindParam('weekNo', $weekNo, PDO::PARAM_INT);
-            $sth->bindParam('modul', $modul, PDO::PARAM_STR);
-            $sth->bindParam('doz', $doz, PDO::PARAM_STR);
+            $sth->bindParam('module', $module, PDO::PARAM_STR);
+            $sth->bindParam('teacher', $teacher, PDO::PARAM_STR);
             $sth->bindParam('notice', $notice, PDO::PARAM_STR);
-            $sth->bindParam('entry0', $entrys[0], PDO::PARAM_STR);
-            $sth->bindParam('entry1', $entrys[1], PDO::PARAM_STR);
-            $sth->bindParam('entry2', $entrys[2], PDO::PARAM_STR);
-            $sth->bindParam('entry3', $entrys[3], PDO::PARAM_STR);
-            $sth->bindParam('entry4', $entrys[4], PDO::PARAM_STR);
-            $sth->bindParam('entry5', $entrys[5], PDO::PARAM_STR);
-            $sth->bindParam('entry6', $entrys[6], PDO::PARAM_STR);
-            $sth->bindParam('entry7', $entrys[7], PDO::PARAM_STR);
-            $sth->bindParam('entry8', $entrys[8], PDO::PARAM_STR);
-            $sth->bindParam('entry9', $entrys[9], PDO::PARAM_STR);
-
             $dummy = $sth->execute();
+
+            $lastID = $dbh->lastInsertId();
+
+            $lesson = new Lesson();
+            // $lessons leer, dann schreibe im SQL 10 leere Einträge
+            if (count($lessons) === 0) {
+                $lessons = ['', '', '', '', '', '', '', '', '', ''];
+                $lesson->createLessons($lastID, '', '', '', '', '', '', '', '', '', '');
+            } else {
+                $lesson->createLessons(
+                    $lastID,
+                    $lessons[0]->getAmContent(),
+                    $lessons[0]->getPmContent(),
+                    $lessons[1]->getAmContent(),
+                    $lessons[1]->getPmContent(),
+                    $lessons[2]->getAmContent(),
+                    $lessons[2]->getPmContent(),
+                    $lessons[3]->getAmContent(),
+                    $lessons[3]->getPmContent(),
+                    $lessons[4]->getAmContent(),
+                    $lessons[4]->getPmContent()
+                );
+            }
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
         // falls id benötigt wird
         // $id = $dbh->lastInsertId();
-
         return Week::getByWeekNo($weekNo);
     }
 
@@ -84,6 +106,13 @@ class Week
         return $this->id;
     }
 
+    /**
+     * Retrieves a Week object by its week number.
+     *
+     * @param int|null $weekNo The week number (optional, default = null).
+     *
+     * @return Week The Week object representing the week.
+     */
     public static function getByWeekNo(int $weekNo = null): Week
     {
         try {
@@ -95,13 +124,13 @@ class Week
                 $sth->bindParam('weekNo', $weekNo, PDO::PARAM_INT);
             }
             $sth->execute();
-            $calWeeks = $sth->fetchAll(PDO::FETCH_FUNC, 'week::buildFromPDO');
+            $calWeeks = $sth->fetchAll(PDO::FETCH_CLASS, 'Week');
             // wenn es noch keine Daten in der db gibt, werden sie erstellt & gespeichert
             if (count($calWeeks) === 0) {
                 // Falls es noch gar keine Woche in db gibt
                 // $weekNo = $weekNo ?? 19;
                 // leere Woche in db erstellen
-                $calWeeks[0] = Week::create($weekNo, '', '', '', ['', '', '', '', '', '', '', '', '', '', '']);
+                $calWeeks[0] = Week::create($weekNo, '', '', '', []);
             }
 
         } catch (PDOException $e) {
@@ -110,15 +139,29 @@ class Week
         return $calWeeks[0];
     }
 
-    public static function buildFromPDO(int $id, int $weekNo, string $modul, string $doz, string $notice,
-                                        string $entry0, string $entry1, string $entry2, string $entry3,
-                                        string $entry4, string $entry5, string $entry6, string $entry7,
-                                        string $entry8, string $entry9)
-    {
-        $entrys = [$entry0, $entry1, $entry2, $entry3, $entry4, $entry5, $entry6, $entry7, $entry8, $entry9];
-        $w = new Week($id, $weekNo, $modul, $doz, $notice, $entrys);
-        return $w;
-    }
+//    /**
+//     * Constructs a new Week object using the provided parameters.
+//     *
+//     * @param int $id The ID of the week.
+//     * @param int $weekNo The week number.
+//     * @param string $module The module name.
+//     * @param string $teacher The names of the teachers.
+//     * @param string $notice Any additional notice for the week.
+//     * @param array $lessons An array of lesson objects for the week.
+//     *
+//     * @return Week The constructed Week object.
+//     */
+//    public static function buildFromPDO(
+//        int $id,
+//        int $weekNo,
+//        string $module,
+//        string $teacher,
+//        string $notice,
+//        array $lessons
+//    ): Week
+//    {
+//        return new Week($id, $weekNo, $module, $teacher, $notice, $lessons);
+//    }
 
     /**
      * @return int
@@ -129,19 +172,19 @@ class Week
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getModul()
+    public function getModule(): string
     {
-        return $this->modul;
+        return $this->module;
     }
 
     /**
      * @return string
      */
-    public function getDoz(): string
+    public function getTeacher(): string
     {
-        return $this->doz;
+        return $this->teacher;
     }
 
     /**
@@ -153,21 +196,29 @@ class Week
     }
 
     /**
-     * @return array
+     * Retrieve the lessons by calendar week ID.
+     *
+     * @return array The lessons associated with the calendar week.
      */
-    public function getEntrys(): array
+    public function getLessonsByCalWeekId(): array
     {
-        return $this->entrys;
+        $l = new Lesson();
+        return $l->getLessonsByCalWeekId($this->getId());
     }
 
     public function save(): Week
     {
-
         $id = $this->getId();
         switch ($id) {
             // DS ist noch nicht in db enthalten
             case 0:
-                $requestWeek = $this->create($this->getWeekNo(), $this->getModul(), $this->getDoz(), $this->getNotice(), $this->getEntrys());
+                $requestWeek = $this->create(
+                    $this->getWeekNo(),
+                    $this->getModule(),
+                    $this->getTeacher(),
+                    $this->getNotice(),
+                    $this->getLessonsByCalWeekId()
+                );
                 break;
             // DS wurde geändert
             default:
@@ -182,87 +233,95 @@ class Week
         try {
             $dbh = Db::getConnection();
             // datenbank abfragen
-            $sql = 'UPDATE calweek 
-                    SET weekNo = :weekNo, 
-                    modul = :modul, 
-                    doz = :doz, 
-                    notice = :notice,  
-                    entry0 = :entry0, 
-                    entry1 = :entry1, 
-                    entry2 = :entry2, 
-                    entry3 = :entry3, 
-                    entry4 = :entry4, 
-                    entry5 = :entry5, 
-                    entry6 = :entry6, 
-                    entry7 = :entry7, 
-                    entry8 = :entry8, 
-                    entry9 = :entry9 
-                    WHERE id = :id';
+            $sql = 'UPDATE calweek SET weekNo = :weekNo, module = :module, teacher = :teacher, notice = :notice WHERE id = :id';
             $sth = $dbh->prepare($sql); // $sth für PDOStatement (prepared Statement)
             $sth->bindParam('weekNo', $this->weekNo, PDO::PARAM_INT);
-            $sth->bindParam('modul', $this->modul, PDO::PARAM_STR);
-            $sth->bindParam('doz', $this->doz, PDO::PARAM_STR);
+            $sth->bindParam('module', $this->module, PDO::PARAM_STR);
+            $sth->bindParam('teacher', $this->teacher, PDO::PARAM_STR);
             $sth->bindParam('notice', $this->notice, PDO::PARAM_STR);
-            $sth->bindParam('entry0', $this->entrys[0], PDO::PARAM_STR);
-            $sth->bindParam('entry1', $this->getEntrys()[1], PDO::PARAM_STR);
-            $sth->bindParam('entry2', $this->getEntrys()[2], PDO::PARAM_STR);
-            $sth->bindParam('entry3', $this->getEntrys()[3], PDO::PARAM_STR);
-            $sth->bindParam('entry4', $this->getEntrys()[4], PDO::PARAM_STR);
-            $sth->bindParam('entry5', $this->getEntrys()[5], PDO::PARAM_STR);
-            $sth->bindParam('entry6', $this->getEntrys()[6], PDO::PARAM_STR);
-            $sth->bindParam('entry7', $this->getEntrys()[7], PDO::PARAM_STR);
-            $sth->bindParam('entry8', $this->getEntrys()[8], PDO::PARAM_STR);
-            $sth->bindParam('entry9', $this->getEntrys()[9], PDO::PARAM_STR);
             $sth->bindParam('id', $this->id, PDO::PARAM_INT);
-
             $sth->execute();
+            $l = new Lesson();
+            $l->update(
+                $this->weekNo,
+                $lessons[0],
+                $lessons[1],
+                $lessons[2],
+                $lessons[3],
+                $lessons[4],
+                $lessons[5],
+                $lessons[6],
+                $lessons[7],
+                $lessons[8],
+                $lessons[9]
+            );
+
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
-
     }
 
+    /**
+     * Returns the last existing week from the database or creates a standard week if no data is found.
+     *
+     * @param Week $postWeek The week object used for reference.
+     *
+     * @return Week The last existing week from the database or a newly created standard week.
+     */
     public function getLastOrStandardWeek(Week $postWeek): Week
     {
         try {
             $dbh = Db::getConnection();
             // letzte Eintragswoche ausgeben
-            $sql = 'SELECT * FROM calweek WHERE id = 
-                            (SELECT MAX(id) FROM calweek)
-                        ';
+            $sql = 'SELECT * FROM calweek WHERE id = (SELECT MAX(id) FROM calweek)';
             $sth = $dbh->prepare($sql); // $sth für PDOStatement
             $sth->execute();
-            $calWeeks = $sth->fetchAll(PDO::FETCH_FUNC, 'week::buildFromPDO');
+            $calWeeks = $sth->fetchAll(PDO::FETCH_CLASS, 'Week');
 
             // wenn es noch keine Daten in der db gibt, werden sie erstellt & gespeichert
             if (count($calWeeks) === 0) {
                 // Falls es noch gar keine Woche in db gibt
                 $weekNo = $weekNo ?? 1;
                 // leere Woche in db erstellen
-                $calWeeks[0] = Week::create($weekNo, '', '', '', ['', '', '', '', '', '', '', '', '', '', '']);
+                $calWeeks[0] = Week::create($weekNo, '', '', '', '');
             }
-
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
+
         return $calWeeks[0];
     }
 
+    /**
+     * Retrieves the next week instance based on the given week.
+     *
+     * @param Week $postWeek The current week instance.
+     *
+     * @return Week The next week instance.
+     */
     public function getNextWeek(Week $postWeek): Week
     {
-        if ($postWeek->getWeekNo() < MAXWEEKNO){
+        if ($postWeek->getWeekNo() < MAXWEEKNO) {
             $weekNo = $this->weekNo + 1;
         } else {
             $weekNo = $this->weekNo;
         }
         return Week::getByWeekNo($weekNo);
     }
+
+    /**
+     * Get the previous week based on a given week.
+     *
+     * @param Week $postWeek The current week object.
+     *
+     * @return Week The previous week object.
+     */
     public function getPreviousWeek(Week $postWeek): Week
     {
-        if ($postWeek->getWeekNo() > MINWEEKNO){
+        if ($postWeek->getWeekNo() > MINWEEKNO) {
             $weekNo = $this->weekNo - 1;
         } else {
-             $weekNo = $this->weekNo;
+            $weekNo = $this->weekNo;
         }
         return Week::getByWeekNo($weekNo);
     }

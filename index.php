@@ -1,5 +1,6 @@
 <?php
-include 'config.php';
+
+include 'config.php'; // todo: vorm pushen ändern
 spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
@@ -47,15 +48,15 @@ switch ($action) {
 // id ist PK
 $id = $requestWeek->getId();
 // Unterrichtsmodul
-$thema = $requestWeek->getModul();
+$thema = $requestWeek->getModule();
 // Kalenderwoche Nummer
 $weekNo = $requestWeek->getWeekNo();
 // Tageseinträge
-$eintrag = $requestWeek->getEntrys();
+$eintrag = $requestWeek->getLessonsByCalWeekId();
 // Bememerkung
 $bem = $requestWeek->getNotice();
 // Dozent
-$doz = $requestWeek->getDoz();
+$doz = $requestWeek->getTeacher();
 
 // Datum erstellen aus KW und Kalenderjahr für jeweiliges Tagesdatum
 // Wochenzahl muss 2-stellig sein
@@ -97,4 +98,4 @@ $dozTop = 599;
 
 // Ausgabeseite einbinden
 include 'view/oneweek.php';
-?>
+
