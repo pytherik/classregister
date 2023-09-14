@@ -79,3 +79,5 @@ fabric.properties
 
 .idea/*
 config.local.php
+config.php
+db/classregister2.sql
