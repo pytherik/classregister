@@ -144,16 +144,16 @@ class Lesson
                                   string $amContent5, string  $pmContent5) : void
     {
         $dbh = Db::getConnection();
-        $sql = "UPDATE lesson SET amContent= :amContent, 
-                  pmContent= :pmContent
+        $sql = "UPDATE lesson SET amContent=:amContent, 
+                  pmContent=:pmContent
                   WHERE calWeekId=:calweekId AND weekday=:weekday";
         $sth = $dbh->prepare($sql);
         $sth->bindParam('calweekId', $calWeekId, PDO::PARAM_INT);
 
         $weekday = 'montag';
-        $sth->bindParam('weekday', $weekday, PDO::PARAM_STR);
-        $sth->bindParam('amContent', $amContent1, PDO::PARAM_STR);
-        $sth->bindParam('pmContent', $pmContent1, PDO::PARAM_STR);
+        $sth->bindParam(':weekday', $weekday, PDO::PARAM_STR);
+        $sth->bindParam(':amContent', $amContent1, PDO::PARAM_STR);
+        $sth->bindParam(':pmContent', $pmContent1, PDO::PARAM_STR);
         $sth->execute();
 
         $weekday = 'dienstag';

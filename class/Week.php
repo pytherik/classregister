@@ -244,7 +244,7 @@ class Week
             $l = new Lesson();
 
             $l->update(
-                $this->weekNo,
+                $this->id,
                 $this->lessons[0],
                 $this->lessons[1],
                  $this->lessons[2],
