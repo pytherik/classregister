@@ -143,11 +143,6 @@ class Lesson
                                   string $amContent4, string  $pmContent4,
                                   string $amContent5, string  $pmContent5) : void
     {
-        echo '<br>';
-        echo $calWeekId;
-        echo $amContent1;
-        echo $pmContent1;
-        echo '<br>';
         $dbh = Db::getConnection();
         $sql = "UPDATE lesson SET amContent= :amContent, " .
                   "pmContent= :pmContent " .
