@@ -243,6 +243,7 @@ class Week
             $sth->execute();
             $l = new Lesson();
 //test
+
             $l->update(
                 $this->id,
                 $this->lessons[0],
