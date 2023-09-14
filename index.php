@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include 'config.php'; // todo: vorm pushen ändern
 spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
@@ -18,13 +18,6 @@ $thema = $_POST['thema'] ?? '';
 $eintrag = $_POST['eintrag'] ?? ['', '', '', '', '', '', '', '', '', '']; // 10 Einträge pro Woche
 $doz = $_POST['doz'] ?? [''];
 $bem = $_POST['bem'] ?? '';
-//echo $id;
-//echo $action;
-//echo $kw;
-//echo $thema;
-//var_dump($eintrag);
-//var_dump($doz);
-//echo $bem;
 
 // week-Objekt aus Übergabevars erstellen
 $postWeek = new Week($id, $kw, $thema, $doz[0], $bem, $eintrag);
@@ -54,7 +47,6 @@ switch ($action) {
 // aus $postWeek werden die anzuzeigenden Daten aufbereitet
 // id ist PK
 $id = $requestWeek->getId();
-//echo $id;
 // Unterrichtsmodul
 $thema = $requestWeek->getModule();
 // Kalenderwoche Nummer
@@ -81,15 +73,13 @@ if ($weekNo == 1) {
 } else {
     $date = DateHelper::getFirstMondayInYear(YEAR)
       ->add(new DateInterval('P'. $weekNo-1 . 'W'));
+
 }
-//var_dump($date);
 
 array_push($datum, $date->format('d.m.Y'));
-
 for ($i = 1; $i < 5; $i++) {
     $date->add(new DateInterval('P1D'));
     array_push($datum, $date->format('d.m.Y'));
-//    var_dump($datum);
 }
 
 //Layoutwerte (für CSS)
