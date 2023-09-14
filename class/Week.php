@@ -241,6 +241,21 @@ class Week
             $sth->bindParam('notice', $this->notice, PDO::PARAM_STR);
             $sth->bindParam('id', $this->id, PDO::PARAM_INT);
             $sth->execute();
+            $l = new Lesson();
+            $l->update(
+                $this->weekNo,
+                $lessons[0],
+                $lessons[1],
+                $lessons[2],
+                $lessons[3],
+                $lessons[4],
+                $lessons[5],
+                $lessons[6],
+                $lessons[7],
+                $lessons[8],
+                $lessons[9]
+            );
+
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
