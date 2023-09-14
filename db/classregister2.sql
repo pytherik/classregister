@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS classregister;
-CREATE DATABASE classregister;
-USE classregister;
+DROP DATABASE IF EXISTS classregisterErik;
+CREATE DATABASE classregisterErik;
+USE classregisterErik;
 
 CREATE TABLE calweek (
     id INT PRIMARY KEY AUTO_INCREMENT,

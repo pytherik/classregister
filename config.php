@@ -1,9 +1,9 @@
 <?php
 const VERSION = 1.0;
 // Datenbankverbindungsdaten
-const DB_DSN = 'mysql:dbname=classregister;host=localhost';
-const DB_USER = 'erik';
-const DB_PASSWD = '321null';
+const DB_DSN = 'mysql:dbname=classregisterErik;host=localhost';
+const DB_USER = 'root';
+const DB_PASSWD = '';
 
 // letzte Woche und erste Woche im Jahr
 const MAXWEEKNO = 53;
