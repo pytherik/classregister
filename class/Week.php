@@ -243,17 +243,17 @@ class Week
             $sth->execute();
             $l = new Lesson();
             $l->update(
-                $this->weekNo,
-                $lessons[0],
-                $lessons[1],
-                $lessons[2],
-                $lessons[3],
-                $lessons[4],
-                $lessons[5],
-                $lessons[6],
-                $lessons[7],
-                $lessons[8],
-                $lessons[9]
+                $this->id,
+                $this->lessons[0],
+                $this->lessons[1],
+                $this->lessons[2],
+                $this->lessons[3],
+                $this->lessons[4],
+                $this->lessons[5],
+                $this->lessons[6],
+                $this->lessons[7],
+                $this->lessons[8],
+                $this->lessons[9]
             );
 
         } catch (PDOException $e) {
