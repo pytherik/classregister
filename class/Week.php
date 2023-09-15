@@ -283,7 +283,7 @@ class Week
                 // Falls es noch gar keine Woche in db gibt
                 $weekNo = $weekNo ?? 1;
                 // leere Woche in db erstellen
-                $calWeeks[0] = Week::create($weekNo, '', '', '', '');
+                $calWeeks[0] = Week::create($weekNo, '', '', '', []);
             }
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
