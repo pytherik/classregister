@@ -1,0 +1,23 @@
+-- checkboxen positionieren
+
+-- neue Klasse Lesson2Method
+   id PK
+   lessonId FK
+   methodId FK
+
+-- neue Klasse Method
+   id PK
+   name
+
+-- Datenbank um 2 Tabellen erweitern
+
+ Backend
+-- Lesson->getAllMethods(id von lesson) : array
+-- Übergabevariablen an Lesson2Method übergeben zum Schreiben oder Löschen
+
+ Frontend
+-- Methode im Frontend, die aus Lesson->getAllMethods die richtigen Checkboxen angeklickt zeigt
+-- Checkboxen Method, die checked und nicht-checked übermittelt
+-- 5 Übergabevariablen pro Woche, jede enthält ein Array von Werten (pro Tag)
+
+
