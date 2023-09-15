@@ -1,0 +1,191 @@
+:root {
+    --themaLeft: 400px;
+    --themaKwTop: 355px;
+    --kwLeft: 2100px;
+    --datumLeft: 370px;
+    --datumTop: 558px;
+    --datumDiffTop: 155px;
+    --eintragLeft: 570px;
+    --eintragTop: 559px;
+    --eintragDiffTop: 155px;
+    --bemTop: 1400px;
+    --dozLeft: 2000px;
+    --dozTop: 599px;
+}
+
+ body {
+     background-color: #444;
+     background-image: url("img/Klassenbuch.png");
+ }
+#next{
+    position: absolute;
+    left: 1000px;
+    top: 50px;
+}
+#previous{
+    position: absolute;
+    left: 150px;
+    top: 50px;
+}
+#save{
+    position: absolute;
+    left: 500px;
+    top: 50px;
+}
+.navtext{
+    font-size: 40px;
+}
+#thema {
+    position: absolute;
+    left: var(--themaLeft);
+    top: var(--themaKwTop);
+    font-size: 46px;
+}
+
+#kw {
+    position: absolute;
+    left: var(--kwLeft);
+    top: calc(var(--themaKwTop) + 5px);
+}
+
+#datum0 {
+    position: absolute;
+    left: var(--datumLeft);
+    top: calc(var(--datumTop) + var(--datumDiffTop));
+}
+
+#datum1 {
+    position: absolute;
+    left: var(--datumLeft);
+    top: calc(var(--datumTop) + var(--datumDiffTop) + 1px);
+}
+
+#datum2 {
+    position: absolute;
+    left: var(--datumLeft);
+    top: calc(var(--datumTop) + var(--datumDiffTop) + 2px);
+}
+
+#datum3 {
+    position: absolute;
+    left: var(--datumLeft);
+    top: calc(var(--datumTop) + var(--datumDiffTop) + 3px);
+}
+
+#datum4 {
+    position: absolute;
+    left: var(--datumLeft);
+    top: calc(var(--datumTop) + var(--datumDiffTop) + 4px);
+}
+
+#bem {
+    position: absolute;
+    left: var(--datumLeft);
+    top: var(--bemTop);
+}
+
+input {
+    font-size: 36px;
+    border: none;
+}
+
+.zahlen {
+    font-size: 30px;
+}
+
+#eintrag0 {
+    position: absolute;
+    left: var(--eintragLeft);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop));
+}
+
+#eintrag1 {
+    position: absolute;
+    left: var(--eintragLeft);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 70px);
+}
+
+#eintrag2 {
+    position: absolute;
+    left: var(--eintragLeft);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 1px);
+}
+
+#eintrag3 {
+    position: absolute;
+    left: var(--eintragLeft);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 71px);
+}
+
+#eintrag4 {
+    position: absolute;
+    left: var(--eintragLeft);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 2px);
+}
+
+#eintrag5 {
+    position: absolute;
+    left: var(--eintragLeft);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 72px);
+}
+
+#eintrag6 {
+    position: absolute;
+    left: var(--eintragLeft);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 3px);
+}
+
+#eintrag7 {
+    position: absolute;
+    left: var(--eintragLeft);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 73px);
+}
+
+#eintrag8 {
+    position: absolute;
+    left: var(--eintragLeft);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 4px);
+}
+
+#eintrag9 {
+    position: absolute;
+    left: var(--eintragLeft);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 74px);
+}
+
+#doz1 {
+    position: absolute;
+    left: var(--dozLeft);
+    top: calc(var(--dozTop) + var(--datumDiffTop));
+}
+
+#doz2 {
+    position: absolute;
+    left: var(--dozLeft);
+    top: calc(var(--dozTop) + var(--datumDiffTop) + 1px);
+}
+
+#doz3 {
+    position: absolute;
+    left: var(--dozLeft);
+    top: calc(var(--dozTop) + var(--datumDiffTop) + 2px);
+}
+
+#doz4 {
+    position: absolute;
+    left: var(--dozLeft);
+    top: calc(var(--dozTop) + var(--datumDiffTop) + 3px);
+}
+
+#doz5 {
+    position: absolute;
+    left: var(--dozLeft);
+    top: calc(var(--dozTop) + var(--datumDiffTop) + 4px);
+}
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
