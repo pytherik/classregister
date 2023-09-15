@@ -5,22 +5,17 @@ spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
 
-//nur zum Testen
-//echo '<pre>';
-//print_r($_POST);
-//echo '</pre>';
 
-// postVar Empfang
 $id = $_POST['id'] ?? 0; // ist bzw. PK vom Week-Objekt
 $action = $_POST['action'] ?? '';
 $kw = $_POST['kw'] ?? 1;
-$thema = $_POST['thema'] ?? '';
-$eintrag = $_POST['eintrag'] ?? ['', '', '', '', '', '', '', '', '', '']; // 10 Einträge pro Woche
-$doz = $_POST['doz'] ?? [''];
-$bem = $_POST['bem'] ?? '';
+$module = $_POST['module'] ?? ''; // vorher $thema
+$lessons = $_POST['lessons'] ?? ['', '', '', '', '', '', '', '', '', '']; // vorher $eintrag -- 10 Einträge pro Woche
+$teacher = $_POST['teacher'] ?? ['']; // vorher $doz
+$notice = $_POST['notice'] ?? '';
 
 // week-Objekt aus Übergabevars erstellen
-$postWeek = new Week($id, $kw, $thema, $doz[0], $bem, $eintrag);
+$postWeek = new Week($id, $kw, $module, $teacher[0], $notice, $lessons);
 
 // controller
 // benötigt Week-Objekt $postWeek - mit den Daten aus der gesendeten Woche
@@ -48,15 +43,15 @@ switch ($action) {
 // id ist PK
 $id = $requestWeek->getId();
 // Unterrichtsmodul
-$thema = $requestWeek->getModule();
+$module = $requestWeek->getModule();
 // Kalenderwoche Nummer
 $weekNo = $requestWeek->getWeekNo();
 // Tageseinträge
-$eintrag = $requestWeek->getLessonsByCalWeekId();
+$lessons = $requestWeek->getLessonsByCalWeekId();
 // Bememerkung
-$bem = $requestWeek->getNotice();
+$notice = $requestWeek->getNotice();
 // Dozent
-$doz = $requestWeek->getTeacher();
+$teacher = $requestWeek->getTeacher();
 
 // Datum erstellen aus KW und Kalenderjahr für jeweiliges Tagesdatum
 // Wochenzahl muss 2-stellig sein
