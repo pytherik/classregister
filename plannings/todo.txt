@@ -24,3 +24,9 @@ view
 
 $thema -> $module
 $bem   -> $notice
+
+- css ausgliedern
+- variablen im view an backend anpassen
+    incl. index.php Variablenempfang
+
+
