@@ -15,26 +15,31 @@
 
  body {
      background-color: #444;
-     background-image: url("img/Klassenbuch.png");
+     background-image: url("../img/Klassenbuch.png");
  }
+
 #next{
     position: absolute;
     left: 1000px;
     top: 50px;
 }
+
 #previous{
     position: absolute;
     left: 150px;
     top: 50px;
 }
+
 #save{
     position: absolute;
     left: 500px;
     top: 50px;
 }
+
 .navtext{
     font-size: 40px;
 }
+
 #thema {
     position: absolute;
     left: var(--themaLeft);
@@ -182,6 +187,7 @@ input {
     left: var(--dozLeft);
     top: calc(var(--dozTop) + var(--datumDiffTop) + 4px);
 }
+
 @media print
 {
     .no-print, .no-print *
