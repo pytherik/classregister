@@ -13,10 +13,10 @@
     --dozTop: 599px;
 }
 
- body {
-     background-color: #444;
-     background-image: url("../img/Klassenbuch.png");
- }
+body {
+    background-color: #444;
+    background-image: url('../img/Klassenbuch.png');
+}
 
 #next{
     position: absolute;
@@ -56,31 +56,31 @@
 #datum0 {
     position: absolute;
     left: var(--datumLeft);
-    top: calc(var(--datumTop) + var(--datumDiffTop));
+    top: calc(var(--datumTop) + 0 * var(--datumDiffTop));
 }
 
 #datum1 {
     position: absolute;
     left: var(--datumLeft);
-    top: calc(var(--datumTop) + var(--datumDiffTop) + 1px);
+    top: calc(var(--datumTop) + 1 * var(--datumDiffTop));
 }
 
 #datum2 {
     position: absolute;
     left: var(--datumLeft);
-    top: calc(var(--datumTop) + var(--datumDiffTop) + 2px);
+    top: calc(var(--datumTop) + 2 * var(--datumDiffTop));
 }
 
 #datum3 {
     position: absolute;
     left: var(--datumLeft);
-    top: calc(var(--datumTop) + var(--datumDiffTop) + 3px);
+    top: calc(var(--datumTop) + 3 * var(--datumDiffTop));
 }
 
 #datum4 {
     position: absolute;
     left: var(--datumLeft);
-    top: calc(var(--datumTop) + var(--datumDiffTop) + 4px);
+    top: calc(var(--datumTop) + 4 * var(--datumDiffTop));
 }
 
 #bem {
@@ -101,91 +101,91 @@ input {
 #eintrag0 {
     position: absolute;
     left: var(--eintragLeft);
-    top: calc(var(--eintragTop) + var(--eintragDiffTop));
+    top: calc(var(--eintragTop));
 }
 
 #eintrag1 {
     position: absolute;
     left: var(--eintragLeft);
-    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 70px);
+    top: calc(var(--eintragTop) + 70px);
 }
 
 #eintrag2 {
     position: absolute;
     left: var(--eintragLeft);
-    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 1px);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop));
 }
 
 #eintrag3 {
     position: absolute;
     left: var(--eintragLeft);
-    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 71px);
+    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 70px);
 }
 
 #eintrag4 {
     position: absolute;
     left: var(--eintragLeft);
-    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 2px);
+    top: calc(var(--eintragTop) + 2 * var(--eintragDiffTop));
 }
 
 #eintrag5 {
     position: absolute;
     left: var(--eintragLeft);
-    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 72px);
+    top: calc(var(--eintragTop) + 2 * var(--eintragDiffTop) + 70px);
 }
 
 #eintrag6 {
     position: absolute;
     left: var(--eintragLeft);
-    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 3px);
+    top: calc(var(--eintragTop) + 3 * var(--eintragDiffTop));
 }
 
 #eintrag7 {
     position: absolute;
     left: var(--eintragLeft);
-    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 73px);
+    top: calc(var(--eintragTop) + 3 * var(--eintragDiffTop) + 70px);
 }
 
 #eintrag8 {
     position: absolute;
     left: var(--eintragLeft);
-    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 4px);
+    top: calc(var(--eintragTop) + 4 * var(--eintragDiffTop));
 }
 
 #eintrag9 {
     position: absolute;
     left: var(--eintragLeft);
-    top: calc(var(--eintragTop) + var(--eintragDiffTop) + 74px);
+    top: calc(var(--eintragTop) + 4 * var(--eintragDiffTop) + 70px);
 }
 
 #doz1 {
     position: absolute;
     left: var(--dozLeft);
-    top: calc(var(--dozTop) + var(--datumDiffTop));
+    top: calc(var(--dozTop));
 }
 
 #doz2 {
     position: absolute;
     left: var(--dozLeft);
-    top: calc(var(--dozTop) + var(--datumDiffTop) + 1px);
+    top: calc(var(--dozTop) + var(--datumDiffTop));
 }
 
 #doz3 {
     position: absolute;
     left: var(--dozLeft);
-    top: calc(var(--dozTop) + var(--datumDiffTop) + 2px);
+    top: calc(var(--dozTop) + 2 * var(--datumDiffTop));
 }
 
 #doz4 {
     position: absolute;
     left: var(--dozLeft);
-    top: calc(var(--dozTop) + var(--datumDiffTop) + 3px);
+    top: calc(var(--dozTop) + 3 * var(--datumDiffTop));
 }
 
 #doz5 {
     position: absolute;
     left: var(--dozLeft);
-    top: calc(var(--dozTop) + var(--datumDiffTop) + 4px);
+    top: calc(var(--dozTop) + 4 * var(--datumDiffTop));
 }
 
 @media print
