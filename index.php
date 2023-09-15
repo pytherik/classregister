@@ -5,6 +5,7 @@ spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
 
+
 //nur zum Testen
 //echo '<pre>';
 //print_r($_POST);
