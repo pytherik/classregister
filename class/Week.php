@@ -56,7 +56,11 @@ class Week
      * @param array $lessons An array of Lesson objects for the week.
      * @return Week The newly created Week object.
      */
-    public static function create(int $weekNo, string $module, string $teacher, string $notice, array $lessons): Week
+    public static function create(int $weekNo,
+                                  string $module,
+                                  string $teacher,
+                                  string $notice,
+                                  array $lessons): Week
     {
         try {
             $dbh = Db::getConnection();
