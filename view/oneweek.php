@@ -67,94 +67,94 @@
     <div id="doz3"><input type="text" name="teacher[]" value="<?php echo $teacher; ?>"></div>
     <div id="doz4"><input type="text" name="teacher[]" value="<?php echo $teacher; ?>"></div>
     <div id="doz5"><input type="text" name="teacher[]" value="<?php echo $teacher; ?>"></div>
-    <div class="module0">
-    <div><input type="checkbox" name="module0[]" id="module0a" class="moduleA" value="F"
-        <?php if (in_array('F', $modules[0])) echo 'checked' ?>>
-      <label class="moduleA" for="module0a">Frontalunterricht</label>
+    <div class="method0">
+    <div><input type="checkbox" name="method0[]" id="method0a" class="methodA" value="F"
+        <?php if (in_array('F', $methods[0])) echo 'checked' ?>>
+      <label class="methodA" for="method0a">Frontalunterricht</label>
     </div>
-    <div><input type="checkbox" name="module0[]" id="module0b" class="moduleA" value="P"
-        <?php if (in_array('P', $modules[0])) echo 'checked' ?>>
-      <label class="moduleA" for="module0b">Projektarbeit</label>
+    <div><input type="checkbox" name="method0[]" id="method0b" class="methodA" value="P"
+        <?php if (in_array('P', $methods[0])) echo 'checked' ?>>
+      <label class="methodA" for="method0b">Projektarbeit</label>
     </div>
-    <div><input type="checkbox" name="module0[]" id="module0c" class="moduleB" value="G"
-        <?php if (in_array('G', $modules[0])) echo 'checked' ?>>
-      <label class="moduleB" for="module0c">Gruppenarbeit</label>
+    <div><input type="checkbox" name="method0[]" id="method0c" class="methodB" value="G"
+        <?php if (in_array('G', $methods[0])) echo 'checked' ?>>
+      <label class="methodB" for="method0c">Gruppenarbeit</label>
     </div>
-    <div><input type="checkbox" name="module0[]" id="module0d" class="moduleB" value="S"
-        <?php if (in_array('S', $modules[0])) echo 'checked' ?>>
-      <label class="moduleB" for="module0d">Selbslernphase</label>
+    <div><input type="checkbox" name="method0[]" id="method0d" class="methodB" value="S"
+        <?php if (in_array('S', $methods[0])) echo 'checked' ?>>
+      <label class="methodB" for="method0d">Selbslernphase</label>
     </div>
     </div>
-    <div class="module1">
-    <div><input type="checkbox" name="module1[]" id="module1a" class="moduleA" value="F"
-        <?php if (in_array('F', $modules[1])) echo 'checked' ?>>
-      <label class="moduleA" for="module1a">Frontalunterricht</label>
+    <div class="method1">
+    <div><input type="checkbox" name="method1[]" id="method1a" class="methodA" value="F"
+        <?php if (in_array('F', $methods[1])) echo 'checked' ?>>
+      <label class="methodA" for="method1a">Frontalunterricht</label>
     </div>
-    <div><input type="checkbox" name="module1[]" id="module1b" class="moduleA" value="P"
-        <?php if (in_array('P', $modules[1])) echo 'checked' ?>>
-      <label class="moduleA" for="module1b">Projektarbeit</label>
+    <div><input type="checkbox" name="method1[]" id="method1b" class="methodA" value="P"
+        <?php if (in_array('P', $methods[1])) echo 'checked' ?>>
+      <label class="methodA" for="method1b">Projektarbeit</label>
     </div>
-    <div><input type="checkbox" name="module1[]" id="module1c" class="moduleB" value="G"
-        <?php if (in_array('G', $modules[1])) echo 'checked' ?>>
-      <label class="moduleB" for="module1c">Gruppenarbeit</label>
+    <div><input type="checkbox" name="method1[]" id="method1c" class="methodB" value="G"
+        <?php if (in_array('G', $methods[1])) echo 'checked' ?>>
+      <label class="methodB" for="method1c">Gruppenarbeit</label>
     </div>
-    <div><input type="checkbox" name="module1[]" id="module1d" class="moduleB" value="S"
-        <?php if (in_array('S', $modules[1])) echo 'checked' ?>>
-      <label class="moduleB" for="module1d">Selbslernphase</label>
+    <div><input type="checkbox" name="method1[]" id="method1d" class="methodB" value="S"
+        <?php if (in_array('S', $methods[1])) echo 'checked' ?>>
+      <label class="methodB" for="method1d">Selbslernphase</label>
       </div>
     </div>
-    <div class="module2">
-    <div><input type="checkbox" name="module2[]" id="module2a" class="moduleA" value="F"
-        <?php if (in_array('F', $modules[2])) echo 'checked' ?>>
-      <label class="moduleA" for="module2a">Frontalunterricht</label>
+    <div class="method2">
+    <div><input type="checkbox" name="method2[]" id="method2a" class="methodA" value="F"
+        <?php if (in_array('F', $methods[2])) echo 'checked' ?>>
+      <label class="methodA" for="method2a">Frontalunterricht</label>
     </div>
-    <div><input type="checkbox" name="module2[]" id="module2b" class="moduleA" value="P"
-        <?php if (in_array('P', $modules[2])) echo 'checked' ?>>
-      <label class="moduleA" for="module2b">Projektarbeit</label>
+    <div><input type="checkbox" name="method2[]" id="method2b" class="methodA" value="P"
+        <?php if (in_array('P', $methods[2])) echo 'checked' ?>>
+      <label class="methodA" for="method2b">Projektarbeit</label>
     </div>
-    <div><input type="checkbox" name="module2[]" id="module2c" class="moduleB" value="G"
-        <?php if (in_array('G', $modules[2])) echo 'checked' ?>>
-      <label class="moduleB" for="module2c">Gruppenarbeit</label>
+    <div><input type="checkbox" name="method2[]" id="method2c" class="methodB" value="G"
+        <?php if (in_array('G', $methods[2])) echo 'checked' ?>>
+      <label class="methodB" for="method2c">Gruppenarbeit</label>
     </div>
-    <div><input type="checkbox" name="module2[]" id="module2d" class="moduleB" value="S"
-        <?php if (in_array('S', $modules[2])) echo 'checked' ?>>
-      <label class="moduleB" for="module2d">Selbslernphase</label>
-    </div>
-    </div>
-    <div class="module3">
-    <div><input type="checkbox" name="module3[]" id="module3a" class="moduleA" value="F"
-        <?php if (in_array('F', $modules[3])) echo 'checked' ?>>
-      <label class="moduleA" for="module3a">Frontalunterricht</label>
-    </div>
-    <div><input type="checkbox" name="module3[]" id="module3b" class="moduleA" value="P"
-        <?php if (in_array('P', $modules[3])) echo 'checked' ?>>
-      <label class="moduleA" for="module3b">Projektarbeit</label>
-    </div>
-    <div><input type="checkbox" name="module3[]" id="module3c" class="moduleB" value="G"
-        <?php if (in_array('G', $modules[3])) echo 'checked' ?>>
-      <label class="moduleB" for="module3c">Gruppenarbeit</label>
-    </div>
-    <div><input type="checkbox" name="module3[]" id="module3d" class="moduleB" value="S"
-        <?php if (in_array('S', $modules[3])) echo 'checked' ?>>
-      <label class="moduleB" for="module3d">Selbslernphase</label>
+    <div><input type="checkbox" name="method2[]" id="method2d" class="methodB" value="S"
+        <?php if (in_array('S', $methods[2])) echo 'checked' ?>>
+      <label class="methodB" for="method2d">Selbslernphase</label>
     </div>
     </div>
-    <div class="module4">
-    <div><input type="checkbox" name="module4[]" id="module4a" class="moduleA" value="F"
-        <?php if (in_array('F', $modules[4])) echo 'checked' ?>>
-      <label class="moduleA" for="module4a">Frontalunterricht</label>
+    <div class="method3">
+    <div><input type="checkbox" name="method3[]" id="method3a" class="methodA" value="F"
+        <?php if (in_array('F', $methods[3])) echo 'checked' ?>>
+      <label class="methodA" for="method3a">Frontalunterricht</label>
     </div>
-    <div><input type="checkbox" name="module4[]" id="module4b" class="moduleA" value="P"
-        <?php if (in_array('P', $modules[4])) echo 'checked' ?>>
-      <label class="moduleA" for="module4b">Projektarbeit</label>
+    <div><input type="checkbox" name="method3[]" id="method3b" class="methodA" value="P"
+        <?php if (in_array('P', $methods[3])) echo 'checked' ?>>
+      <label class="methodA" for="method3b">Projektarbeit</label>
     </div>
-    <div><input type="checkbox" name="module4[]" id="module4c" class="moduleB" value="G"
-        <?php if (in_array('G', $modules[4])) echo 'checked' ?>>
-      <label class="moduleB" for="module4c">Gruppenarbeit</label>
+    <div><input type="checkbox" name="method3[]" id="method3c" class="methodB" value="G"
+        <?php if (in_array('G', $methods[3])) echo 'checked' ?>>
+      <label class="methodB" for="method3c">Gruppenarbeit</label>
     </div>
-    <div><input type="checkbox" name="module4[]" id="module4d" class="moduleB" value="S"
-        <?php if (in_array('S', $modules[4])) echo 'checked' ?>>
-      <label class="moduleB" for="module4d">Selbslernphase</label>
+    <div><input type="checkbox" name="method3[]" id="method3d" class="methodB" value="S"
+        <?php if (in_array('S', $methods[3])) echo 'checked' ?>>
+      <label class="methodB" for="method3d">Selbslernphase</label>
+    </div>
+    </div>
+    <div class="method4">
+    <div><input type="checkbox" name="method4[]" id="method4a" class="methodA" value="F"
+        <?php if (in_array('F', $methods[4])) echo 'checked' ?>>
+      <label class="methodA" for="method4a">Frontalunterricht</label>
+    </div>
+    <div><input type="checkbox" name="method4[]" id="method4b" class="methodA" value="P"
+        <?php if (in_array('P', $methods[4])) echo 'checked' ?>>
+      <label class="methodA" for="method4b">Projektarbeit</label>
+    </div>
+    <div><input type="checkbox" name="method4[]" id="method4c" class="methodB" value="G"
+        <?php if (in_array('G', $methods[4])) echo 'checked' ?>>
+      <label class="methodB" for="method4c">Gruppenarbeit</label>
+    </div>
+    <div><input type="checkbox" name="method4[]" id="method4d" class="methodB" value="S"
+        <?php if (in_array('S', $methods[4])) echo 'checked' ?>>
+      <label class="methodB" for="method4d">Selbslernphase</label>
     </div>
     </div>
   </form>

@@ -83,49 +83,49 @@ body {
     top: calc(var(--datumTop) + 4 * var(--datumDiffTop));
 }
 
-.module0, .module1,
-.module2, .module3,
-.module4 {
+.method0, .method1,
+.method2, .method3,
+.method4 {
     cursor: pointer;
     font-size: 20px;
 }
 
-.module0 {
+.method0 {
     position: absolute;
     left: calc(var(--datumLeft)*4.57);
     top: calc(var(--datumTop));
 }
 
-.module1 {
+.method1 {
     position: absolute;
     left: calc(var(--datumLeft)*4.57);
     top: calc(var(--datumTop) + 1 * var(--datumDiffTop));
 }
 
-.module2 {
+.method2 {
     position: absolute;
     left: calc(var(--datumLeft)*4.57);
     top: calc(var(--datumTop) + 2 * var(--datumDiffTop));
 }
 
-.module3 {
+.method3 {
     position: absolute;
     left: calc(var(--datumLeft)*4.57);
     top: calc(var(--datumTop) + 3 * var(--datumDiffTop));
 }
 
-.module4 {
+.method4 {
     position: absolute;
     left: calc(var(--datumLeft)*4.57);
     top: calc(var(--datumTop) + 4 * var(--datumDiffTop));
 }
 
-.moduleA {
+.methodA {
     position: relative;
     top: 0;
 }
 
-.moduleB {
+.methodB {
     position: relative;
     top: 15px;
 }
