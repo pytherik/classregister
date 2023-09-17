@@ -13,6 +13,12 @@ $module = $_POST['module'] ?? ''; // vorher $thema
 $lessons = $_POST['lessons'] ?? ['', '', '', '', '', '', '', '', '', '']; // vorher $eintrag -- 10 Einträge pro Woche
 $teacher = $_POST['teacher'] ?? ['']; // vorher $doz
 $notice = $_POST['notice'] ?? ''; // vorher $bem
+$modules = [
+  $_POST['module0'] ?? [],
+  $_POST['module1'] ?? [],
+  $_POST['module2'] ?? [],
+  $_POST['module3'] ?? [],
+  $_POST['module4'] ?? []];
 
 // week-Objekt aus Übergabevars erstellen
 $postWeek = new Week($id, $kw, $module, $teacher[0], $notice, $lessons);

@@ -83,6 +83,53 @@ body {
     top: calc(var(--datumTop) + 4 * var(--datumDiffTop));
 }
 
+.module0, .module1,
+.module2, .module3,
+.module4 {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.module0 {
+    position: absolute;
+    left: calc(var(--datumLeft)*4.57);
+    top: calc(var(--datumTop));
+}
+
+.module1 {
+    position: absolute;
+    left: calc(var(--datumLeft)*4.57);
+    top: calc(var(--datumTop) + 1 * var(--datumDiffTop));
+}
+
+.module2 {
+    position: absolute;
+    left: calc(var(--datumLeft)*4.57);
+    top: calc(var(--datumTop) + 2 * var(--datumDiffTop));
+}
+
+.module3 {
+    position: absolute;
+    left: calc(var(--datumLeft)*4.57);
+    top: calc(var(--datumTop) + 3 * var(--datumDiffTop));
+}
+
+.module4 {
+    position: absolute;
+    left: calc(var(--datumLeft)*4.57);
+    top: calc(var(--datumTop) + 4 * var(--datumDiffTop));
+}
+
+.moduleA {
+    position: relative;
+    top: 0;
+}
+
+.moduleB {
+    position: relative;
+    top: 15px;
+}
+
 #bem {
     position: absolute;
     left: var(--datumLeft);
