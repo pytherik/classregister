@@ -21,7 +21,7 @@ $methods = [
   $_POST['method4'] ?? []];
 
 // week-Objekt aus Übergabevars erstellen
-$postWeek = new Week($id, $kw, $module, $teacher[0], $notice, $lessons);
+$postWeek = new Week($id, $kw, $module, $teacher[0], $notice, $lessons, $methods);
 
 // controller
 // benötigt Week-Objekt $postWeek - mit den Daten aus der gesendeten Woche
@@ -58,6 +58,8 @@ $lessons = $requestWeek->getLessonsByCalWeekId();
 $notice = $requestWeek->getNotice();
 // Dozent
 $teacher = $requestWeek->getTeacher();
+
+$methods = $requestWeek->getMethodsByCalWeekId();
 
 // Datum erstellen aus KW und Kalenderjahr für jeweiliges Tagesdatum
 // Wochenzahl muss 2-stellig sein

@@ -16,6 +16,7 @@ class Week
 
     private array $lessons = [];
 
+    private array $methods = [[],[],[],[],[]];
 
     /**
      * Class Constructor
@@ -33,7 +34,8 @@ class Week
         string $module = null,
         string $teacher = null,
         string $notice = null,
-        array $lessons = null
+        array $lessons = null,
+        array $methods = null
     ) {
         if ($id === null) {
         } else {
@@ -43,6 +45,7 @@ class Week
             $this->teacher = $teacher;
             $this->notice = $notice;
             $this->lessons = $lessons;
+            $this->methods = $methods;
         }
     }
 
@@ -60,7 +63,8 @@ class Week
                                   string $module,
                                   string $teacher,
                                   string $notice,
-                                  array $lessons): Week
+                                  array $lessons,
+                                  array $methods): Week
     {
         try {
             $dbh = Db::getConnection();
@@ -77,8 +81,7 @@ class Week
             $lesson = new Lesson();
             // $lessons leer, dann schreibe im SQL 10 leere Einträge
             if (count($lessons) === 0) {
-                $lessons = ['', '', '', '', '', '', '', '', '', ''];
-                $lesson->createLessons($lastID, '', '', '', '', '', '', '', '', '', '');
+                $lesson->createLessons($lastID, '', '', '', '', '', '', '', '', '', '', [[], [], [], [], []]);
             } else {
                 $lesson->createLessons(
                     $lastID,
@@ -91,7 +94,7 @@ class Week
                     $lessons[3]->getAmContent(),
                     $lessons[3]->getPmContent(),
                     $lessons[4]->getAmContent(),
-                    $lessons[4]->getPmContent()
+                    $lessons[4]->getPmContent(), $methods
                 );
             }
         } catch (PDOException $e) {
@@ -134,7 +137,7 @@ class Week
                 // Falls es noch gar keine Woche in db gibt
                 // $weekNo = $weekNo ?? 19;
                 // leere Woche in db erstellen
-                $calWeeks[0] = Week::create($weekNo, '', '', '', []);
+                $calWeeks[0] = Week::create($weekNo, '', '', '', [], [[], [], [], [], []]);
             }
 
         } catch (PDOException $e) {
@@ -142,30 +145,6 @@ class Week
         }
         return $calWeeks[0];
     }
-
-//    /**
-//     * Constructs a new Week object using the provided parameters.
-//     *
-//     * @param int $id The ID of the week.
-//     * @param int $weekNo The week number.
-//     * @param string $module The module name.
-//     * @param string $teacher The names of the teachers.
-//     * @param string $notice Any additional notice for the week.
-//     * @param array $lessons An array of lesson objects for the week.
-//     *
-//     * @return Week The constructed Week object.
-//     */
-//    public static function buildFromPDO(
-//        int $id,
-//        int $weekNo,
-//        string $module,
-//        string $teacher,
-//        string $notice,
-//        array $lessons
-//    ): Week
-//    {
-//        return new Week($id, $weekNo, $module, $teacher, $notice, $lessons);
-//    }
 
     /**
      * @return int
@@ -210,6 +189,11 @@ class Week
         return $l->getLessonsByCalWeekId($this->getId());
     }
 
+    public function getMethodsByCalWeekId(): array
+    {
+      $m = new Lesson2Method();
+      return $m->getMethodsByCalWeekId($this->getId());
+    }
     public function save(): Week
     {
         $id = $this->getId();
@@ -221,7 +205,8 @@ class Week
                     $this->getModule(),
                     $this->getTeacher(),
                     $this->getNotice(),
-                    $this->getLessonsByCalWeekId()
+                    $this->getLessonsByCalWeekId(),
+                    $this->getMethodsByCalWeekId()
                 );
                 break;
             // DS wurde geändert
@@ -246,6 +231,9 @@ class Week
             $sth->bindParam('id', $this->id, PDO::PARAM_INT);
             $sth->execute();
             $l = new Lesson();
+//          echo "<pre>";
+//          print_r($this->methods);
+//          echo "</pre>";
             $l->update(
                 $this->id,
                 $this->lessons[0],
@@ -257,7 +245,7 @@ class Week
                 $this->lessons[6],
                 $this->lessons[7],
                 $this->lessons[8],
-                $this->lessons[9]
+                $this->lessons[9], $this->methods
             );
 
         } catch (PDOException $e) {
