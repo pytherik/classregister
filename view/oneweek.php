@@ -67,6 +67,26 @@
     <div id="doz3"><input type="text" name="teacher[]" value="<?php echo $teacher; ?>"></div>
     <div id="doz4"><input type="text" name="teacher[]" value="<?php echo $teacher; ?>"></div>
     <div id="doz5"><input type="text" name="teacher[]" value="<?php echo $teacher; ?>"></div>
+    <div class="module0"><input type="checkbox" name="module0[]" id="module0a"></div>
+    <div class="module0"><input type="checkbox" name="module0[]" id="module0b"></div>
+    <div class="module0"><input type="checkbox" name="module0[]" id="module0c"></div>
+    <div class="module0"><input type="checkbox" name="module0[]" id="module0d"></div>
+    <div class="module1"><input type="checkbox" name="module1[]" id="module1a"></div>
+    <div class="module1"><input type="checkbox" name="module1[]" id="module1b"></div>
+    <div class="module1"><input type="checkbox" name="module1[]" id="module1c"></div>
+    <div class="module1"><input type="checkbox" name="module1[]" id="module1d></div>
+    <div class="module2"><input type="checkbox" name="module2[]" id="module2a"></div>
+    <div class="module2"><input type="checkbox" name="module2[]" id="module2b"></div>
+    <div class="module2"><input type="checkbox" name="module2[]" id="module2c"></div>
+    <div class="module2"><input type="checkbox" name="module2[]" id="module2d"></div>
+    <div class="module3"><input type="checkbox" name="module3[]" id="module3a"></div>
+    <div class="module3"><input type="checkbox" name="module3[]" id="module3b"></div>
+    <div class="module3"><input type="checkbox" name="module3[]" id="module3c"></div>
+    <div class="module3"><input type="checkbox" name="module3[]" id="module3d"></div>
+    <div class="module4"><input type="checkbox" name="module4[]" id="module4a"></div>
+    <div class="module4"><input type="checkbox" name="module4[]" id="module4b"></div>
+    <div class="module4"><input type="checkbox" name="module4[]" id="module4c"></div>
+    <div class="module4"><input type="checkbox" name="module4[]" id="module4d"></div>
   </form>
 </div>
 </body>
