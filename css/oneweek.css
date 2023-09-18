@@ -1,6 +1,192 @@
+:root {
+    --themaLeft: 400;
+    --themaKwTop:355;
+    --kwLeft: 2100;
+    --datumLeft: 370;
+    --datumTop: 558;
+    --datumDiffTop: 155;
+    --eintragLeft: 570;
+    --eintragTop: 559;
+    --eintragDiffTop: 155;
+    --bemTop: 1400;
+    --dozLeft: 2000;
+    --dozTop: 599;
+}
+
 body {
     background-color: white;
     background-image: url("../img/Klassenbuch.png");
 }
 
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+#next{
+    position: absolute;
+    left: 1000px;
+    top: 50px;
+}
+#previous{
+    position: absolute;
+    left: 150px;
+    top: 50px;
+}
+#save{
+    position: absolute;
+    left: 500px;
+    top: 50px;
+}
+.navtext{
+    font-size: 40px;
+}
+#thema {
+    position: absolute;
+    left: var(--themaLeft)px;
+    top: var(--themaKwTop)px;
+    font-size: 46px;
+}
 
+#kw {
+    position: absolute;
+    left: var(--kwLeft)px;
+    top:  calc(var(--themaKwTop) + 5)px;
+}
+
+#datum0 {
+    position: absolute;
+    left:  var(--datumLeft)px;
+    top:  calc(var(--datumTop) + 0 * var(--datumDiffTop))px;
+}
+
+#datum1 {
+    position: absolute;
+    left:  var(--datumLeft)px;
+    top:  calc(var(--datumTop) + 1 * var(--datumDiffTop))px;
+}
+
+#datum2 {
+    position: absolute;
+    left:  var(--datumLeft)px;
+    top:  calc(var(--datumTop) + 2 * var(--datumDiffTop))px;
+}
+
+#datum3 {
+    position: absolute;
+    left:  var(--datumLeft)px;
+    top: calc(var(--datumTop) + 3 * var(--datumDiffTop))px;
+}
+
+#datum4 {
+    position: absolute;
+    left:  var(--datumLeft)px;
+    top:  calc(var(--datumTop) + 4 * var(--datumDiffTop))px;
+}
+
+#bem {
+    position: absolute;
+    left:  var(--datumLeft)px;
+    top:  var(--bemTop)px;
+}
+
+input {
+    font-size: 36px;
+    border: none;
+}
+
+.zahlen {
+    font-size: 30px;
+}
+
+#eintrag0 {
+    position: absolute;
+    left: var(--eintragLeft)px;
+    top:  calc(var(--eintragTop) + 0 * var(--eintragDiffTop))px;
+}
+
+#eintrag1 {
+    position: absolute;
+    left:  var(--eintragLeft)px;
+    top:  calc(var(--eintragTop) + 0 * var(--eintragDiffTop) + 70)px;
+}
+
+#eintrag2 {
+    position: absolute;
+    left:  var(--eintragLeft)px;
+    top:  calc(var(--eintragTop) + 1 * var(--eintragDiffTop))px;
+}
+
+#eintrag3 {
+    position: absolute;
+    left:  var(--eintragLeft)px;
+    top:  calc(var(--eintragTop) + 1 * var(--eintragDiffTop) + 70)px;
+}
+
+#eintrag4 {
+    position: absolute;
+    left:  var(--eintragLeft)px;
+    top:  calc(var(--eintragTop) + 2 * var(--eintragDiffTop))px;
+}
+
+#eintrag5 {
+    position: absolute;
+    left:  var(--eintragLeft)px;
+    top:  calc(var(--eintragTop) + 2 * var(--eintragDiffTop) + 70)px;
+}
+
+#eintrag6 {
+    position: absolute;
+    left:  var(--eintragLeft)px;
+    top:  calc(var(--eintragTop) + 3 * var(--eintragDiffTop))px;
+}
+
+#eintrag7 {
+    position: absolute;
+    left:  var(--eintragLeft)px;
+    top:  calc(var(--eintragTop) + 3 * var(--eintragDiffTop) + 70)px;
+}
+
+#eintrag8 {
+    position: absolute;
+    left:  var(--eintragLeft)px;
+    top:  calc(var(--eintragTop) + 4 * var(--eintragDiffTop))px;
+}
+
+#eintrag9 {
+    position: absolute;
+    left:  var(--eintragLeft)px;
+    top:  calc(var(--eintragTop) + 4 * var(--eintragDiffTop) + 70)px;
+}
+
+#doz1 {
+    position: absolute;
+    left:  var(--dozLeft)px;
+    top:  calc(var(--dozTop) + 0 * var(--datumDiffTop))px;
+}
+
+#doz2 {
+    position: absolute;
+    left:  var(--dozLeft)px;
+    top:  calc(var(--dozTop) + 1 * var(--datumDiffTop))px;
+}
+
+#doz3 {
+    position: absolute;
+    left:  var(--dozLeft)px;
+    top:  calc(var(--dozTop) + 2 * var(--datumDiffTop))px;
+}
+
+#doz4 {
+    position: absolute;
+    left:  var(--dozLeft)px;
+    top:  calc(var(--dozTop) + 3 * var(--datumDiffTop))px;
+}
+
+#doz5 {
+    position: absolute;
+    left:  var(--dozLeft)px;
+    top:  calc(var(--dozTop) + 4 * var(--datumDiffTop))px;
+}
