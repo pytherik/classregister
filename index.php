@@ -14,10 +14,10 @@ spl_autoload_register(function ($class) {
 $id = $_POST['id'] ?? 0; // ist bzw. PK vom Week-Objekt
 $action = $_POST['action'] ?? '';
 $kw = $_POST['kw'] ?? 1;
-$module = $_POST['thema'] ?? '';
-$lesson = $_POST['eintrag'] ?? ['', '', '', '', '', '', '', '', '', '']; // 10 Einträge pro Woche
-$teacher = $_POST['doz'] ?? [''];
-$notice = $_POST['bem'] ?? '';
+$module = $_POST['module'] ?? '';
+$lesson = $_POST['lesson'] ?? ['', '', '', '', '', '', '', '', '', '']; // 10 Einträge pro Woche
+$teacher = $_POST['teacher'] ?? [''];
+$notice = $_POST['notice'] ?? '';
 
 // week-Objekt aus Übergabevars erstellen
 $postWeek = new Week($id, $kw, $module, $teacher[0], $notice, $lesson);

@@ -34,7 +34,8 @@
         .navtext{
             font-size: 40px;
         }
-        #thema {
+
+        #module {
             position: absolute;
             left: <?php echo $themaLeft; ?>px;
             top: <?php echo $themaKwTop; ?>px;
@@ -77,7 +78,7 @@
             top: <?php echo $datumTop + 4 * $datumDiffTop; ?>px;
         }
 
-        #bem {
+        #notice {
             position: absolute;
             left: <?php echo $datumLeft; ?>px;
             top: <?php echo $bemTop; ?>px;
@@ -92,91 +93,91 @@
             font-size: 30px;
         }
 
-        #eintrag0 {
+        #lesson0 {
             position: absolute;
             left: <?php echo $eintragLeft; ?>px;
             top: <?php echo ($eintragTop + 0 * $eintragDiffTop); ?>px;
         }
 
-        #eintrag1 {
+        #lesson1 {
             position: absolute;
             left: <?php echo $eintragLeft; ?>px;
             top: <?php echo ($eintragTop + 0 * $eintragDiffTop + 70); ?>px;
         }
 
-        #eintrag2 {
+        #lesson2 {
             position: absolute;
             left: <?php echo $eintragLeft; ?>px;
             top: <?php echo ($eintragTop + 1 * $eintragDiffTop); ?>px;
         }
 
-        #eintrag3 {
+        #lesson3 {
             position: absolute;
             left: <?php echo $eintragLeft; ?>px;
             top: <?php echo ($eintragTop + 1 * $eintragDiffTop + 70); ?>px;
         }
 
-        #eintrag4 {
+        #lesson4 {
             position: absolute;
             left: <?php echo $eintragLeft; ?>px;
             top: <?php echo ($eintragTop + 2 * $eintragDiffTop); ?>px;
         }
 
-        #eintrag5 {
+        #lesson5 {
             position: absolute;
             left: <?php echo $eintragLeft; ?>px;
             top: <?php echo ($eintragTop + 2 * $eintragDiffTop + 70); ?>px;
         }
 
-        #eintrag6 {
+        #lesson6 {
             position: absolute;
             left: <?php echo $eintragLeft; ?>px;
             top: <?php echo ($eintragTop + 3 * $eintragDiffTop); ?>px;
         }
 
-        #eintrag7 {
+        #lesson7 {
             position: absolute;
             left: <?php echo $eintragLeft; ?>px;
             top: <?php echo ($eintragTop + 3 * $eintragDiffTop + 70); ?>px;
         }
 
-        #eintrag8 {
+        #lesson8 {
             position: absolute;
             left: <?php echo $eintragLeft; ?>px;
             top: <?php echo ($eintragTop + 4 * $eintragDiffTop); ?>px;
         }
 
-        #eintrag9 {
+        #lesson9 {
             position: absolute;
             left: <?php echo $eintragLeft; ?>px;
             top: <?php echo ($eintragTop + 4 * $eintragDiffTop + 70); ?>px;
         }
 
-        #doz1 {
+        #teacher1 {
             position: absolute;
             left: <?php echo $dozLeft; ?>px;
             top: <?php echo ($dozTop + 0 * $datumDiffTop); ?>px;
         }
 
-        #doz2 {
+        #teacher2 {
             position: absolute;
             left: <?php echo $dozLeft; ?>px;
             top: <?php echo ($dozTop + 1 * $datumDiffTop); ?>px;
         }
 
-        #doz3 {
+        #teacher3 {
             position: absolute;
             left: <?php echo $dozLeft; ?>px;
             top: <?php echo ($dozTop + 2 * $datumDiffTop); ?>px;
         }
 
-        #doz4 {
+        #teacher4 {
             position: absolute;
             left: <?php echo $dozLeft; ?>px;
             top: <?php echo ($dozTop + 3 * $datumDiffTop); ?>px;
         }
 
-        #doz5 {
+        #teacher5 {
             position: absolute;
             left: <?php echo $dozLeft; ?>px;
             top: <?php echo ($dozTop + 4 * $datumDiffTop); ?>px;
@@ -197,7 +198,7 @@
             <button type="submit" name="action" value="next" class="navtext">nächste Woche =></button>
         </div>
 
-        <div id="thema"><input type="text" name="thema" value="<?php
+        <div id="module"><input type="text" name="module" value="<?php
             echo $module; ?>"></div>
         <div id="kw"><input type="text" class="zahlen" name="kw" style="width: 40px;" value="<?php echo $weekNo; ?>">
         </div>
@@ -207,49 +208,49 @@
         <div id="datum3"><input type="text" class="zahlen" value="<?php echo $datum[3]; ?>"></div>
         <div id="datum4"><input type="text" class="zahlen" value="<?php echo $datum[4]; ?>"></div>
         <!-- Bem -->
-        <div id="bem"><input type="text" name="bem" style="width: 1500px;" value="<?php
+        <div id="notice"><input type="text" name="notice" style="width: 1500px;" value="<?php
             echo $notice; ?>"></div>
         <!-- einträge -->
-        <div id="eintrag0"><input name="eintrag[]" type="text" style="width: 1200px;"
+        <div id="lesson0"><input name="lesson[]" type="text" style="width: 1200px;"
                                   value="<?php
                                   echo $lesson[0]->getAmContent(); ?>"></div>
-        <div id="eintrag1"><input name="eintrag[]" type="text" style="width: 1200px;"
+        <div id="lesson1"><input name="lesson[]" type="text" style="width: 1200px;"
                                   value="<?php
                                   echo $lesson[0]->getPmContent(); ?>"></div>
-        <div id="eintrag2"><input name="eintrag[]" style="width: 1200px;" type="text"
+        <div id="lesson2"><input name="lesson[]" style="width: 1200px;" type="text"
                                   value="<?php
                                   echo $lesson[1]->getAmContent(); ?>"></div>
-        <div id="eintrag3"><input name="eintrag[]" type="text" style="width: 1200px;"
+        <div id="lesson3"><input name="lesson[]" type="text" style="width: 1200px;"
                                   value="<?php
                                   echo $lesson[1]->getPmContent(); ?>"></div>
-        <div id="eintrag4"><input name="eintrag[]" type="text" style="width: 1200px;"
+        <div id="lesson4"><input name="lesson[]" type="text" style="width: 1200px;"
                                   value="<?php
                                   echo $lesson[2]->getAmContent(); ?>"></div>
-        <div id="eintrag5"><input name="eintrag[]" type="text" style="width: 1200px;"
+        <div id="lesson5"><input name="lesson[]" type="text" style="width: 1200px;"
                                   value="<?php
                                   echo $lesson[2]->getPmContent(); ?>"></div>
-        <div id="eintrag6"><input name="eintrag[]" type="text" style="width: 1200px;"
+        <div id="lesson6"><input name="lesson[]" type="text" style="width: 1200px;"
                                   value="<?php
                                   echo $lesson[3]->getAmContent(); ?>"></div>
-        <div id="eintrag7"><input name="eintrag[]" type="text" style="width: 1200px;"
+        <div id="lesson7"><input name="lesson[]" type="text" style="width: 1200px;"
                                   value="<?php
                                   echo $lesson[3]->getPmContent(); ?>"></div>
-        <div id="eintrag8"><input name="eintrag[]" type="text" style="width: 1200px;"
+        <div id="lesson8"><input name="lesson[]" type="text" style="width: 1200px;"
                                   value="<?php
                                   echo $lesson[4]->getAmContent(); ?>"></div>
-        <div id="eintrag9"><input name="eintrag[]" type="text" style="width: 1200px;"
+        <div id="lesson9"><input name="lesson[]" type="text" style="width: 1200px;"
                                   value="<?php
                                   echo $lesson[4]->getPmContent(); ?>"></div>
         <!-- Dozenten -->
-        <div id="doz1"><input type="text" name="doz[]" value="<?php
+        <div id="teacher1"><input type="text" name="teacher[]" value="<?php
             echo $teacher; ?>"></div>
-        <div id="doz2"><input type="text" name="doz[]" value="<?php
+        <div id="teacher2"><input type="text" name="teacher[]" value="<?php
             echo $teacher; ?>"></div>
-        <div id="doz3"><input type="text" name="doz[]" value="<?php
+        <div id="teacher3"><input type="text" name="teacher[]" value="<?php
             echo $teacher; ?>"></div>
-        <div id="doz4"><input type="text" name="doz[]" value="<?php
+        <div id="teacher4"><input type="text" name="teacher[]" value="<?php
             echo $teacher; ?>"></div>
-        <div id="doz5"><input type="text" name="doz[]" value="<?php
+        <div id="teacher5"><input type="text" name="teacher[]" value="<?php
             echo $teacher; ?>"></div>
     </form>
 </div>
