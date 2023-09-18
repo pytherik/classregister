@@ -5,12 +5,12 @@
     --datumLeft: 370;
     --datumTop: 558;
     --datumDiffTop: 155;
-    --eintragLeft: 570;
-    --eintragTop: 559;
-    --eintragDiffTop: 155;
+    --lessonLeft: 570;
+    --lessonTop: 559;
+    --lessonDiffTop: 155;
     --bemTop: 1400;
-    --dozLeft: 2000;
-    --dozTop: 599;
+    --teacherLeft: 2000;
+    --teacherTop: 599;
 }
 
 body {
@@ -43,7 +43,7 @@ body {
 .navtext{
     font-size: 40px;
 }
-#thema {
+#module {
     position: absolute;
     left: calc(var(--themaLeft) * 1px);
     top: calc(var(--themaKwTop) * 1px);
@@ -86,7 +86,7 @@ body {
     top:  calc(var(--datumTop) * 1px + 4 * var(--datumDiffTop) * 1px);
 }
 
-#bem {
+#notice {
     position: absolute;
     left:  calc(var(--datumLeft)* 1px);
     top:  calc(var(--bemTop) * 1px);
@@ -101,92 +101,92 @@ input {
     font-size: 30px;
 }
 
-#eintrag0 {
+#lesson0 {
     position: absolute;
-    left: calc(var(--eintragLeft) * 1px);
-    top:  calc(var(--eintragTop) * 1px + 0 * var(--eintragDiffTop) * 1px);
+    left: calc(var(--lessonLeft) * 1px);
+    top:  calc(var(--lessonTop) * 1px + 0 * var(--lessonDiffTop) * 1px);
 }
 
-#eintrag1 {
+#lesson1 {
     position: absolute;
-    left: calc(var(--eintragLeft) * 1px);
-    top:  calc(var(--eintragTop) * 1px + 0 * var(--eintragDiffTop) * 1px + 70px);
+    left: calc(var(--lessonLeft) * 1px);
+    top:  calc(var(--lessonTop) * 1px + 0 * var(--lessonDiffTop) * 1px + 70px);
 }
 
-#eintrag2 {
+#lesson2 {
     position: absolute;
-    left: calc(var(--eintragLeft) * 1px);
-    top:  calc(var(--eintragTop) * 1px + 1 * var(--eintragDiffTop) * 1px);
+    left: calc(var(--lessonLeft) * 1px);
+    top:  calc(var(--lessonTop) * 1px + 1 * var(--lessonDiffTop) * 1px);
 }
 
-#eintrag3 {
+#lesson3 {
     position: absolute;
-    left: calc(var(--eintragLeft) * 1px);
-    top:  calc(var(--eintragTop) * 1px + 1 * var(--eintragDiffTop) * 1px + 70px);
+    left: calc(var(--lessonLeft) * 1px);
+    top:  calc(var(--lessonTop) * 1px + 1 * var(--lessonDiffTop) * 1px + 70px);
 }
 
-#eintrag4 {
+#lesson4 {
     position: absolute;
-    left: calc(var(--eintragLeft) * 1px);
-    top:  calc(var(--eintragTop) * 1px + 2 * var(--eintragDiffTop) * 1px);
+    left: calc(var(--lessonLeft) * 1px);
+    top:  calc(var(--lessonTop) * 1px + 2 * var(--lessonDiffTop) * 1px);
 }
 
-#eintrag5 {
+#lesson5 {
     position: absolute;
-    left: calc(var(--eintragLeft) * 1px);
-    top:  calc(var(--eintragTop) * 1px + 2 * var(--eintragDiffTop) * 1px + 70px);
+    left: calc(var(--lessonLeft) * 1px);
+    top:  calc(var(--lessonTop) * 1px + 2 * var(--lessonDiffTop) * 1px + 70px);
 }
 
-#eintrag6 {
+#lesson6 {
     position: absolute;
-    left: calc(var(--eintragLeft) * 1px);
-    top:  calc(var(--eintragTop) * 1px + 3 * var(--eintragDiffTop) * 1px);
+    left: calc(var(--lessonLeft) * 1px);
+    top:  calc(var(--lessonTop) * 1px + 3 * var(--lessonDiffTop) * 1px);
 }
 
-#eintrag7 {
+#lesson7 {
     position: absolute;
-    left: calc(var(--eintragLeft) * 1px);
-    top:  calc(var(--eintragTop) * 1px + 3 * var(--eintragDiffTop) * 1px + 70px);
+    left: calc(var(--lessonLeft) * 1px);
+    top:  calc(var(--lessonTop) * 1px + 3 * var(--lessonDiffTop) * 1px + 70px);
 }
 
-#eintrag8 {
+#lesson8 {
     position: absolute;
-    left: calc(var(--eintragLeft) * 1px);
-    top:  calc(var(--eintragTop) * 1px + 4 * var(--eintragDiffTop) * 1px);
+    left: calc(var(--lessonLeft) * 1px);
+    top:  calc(var(--lessonTop) * 1px + 4 * var(--lessonDiffTop) * 1px);
 }
 
-#eintrag9 {
+#lesson9 {
     position: absolute;
-    left: calc(var(--eintragLeft) * 1px);
-    top:  calc(var(--eintragTop) * 1px + 4 * var(--eintragDiffTop) * 1px + 70px);
+    left: calc(var(--lessonLeft) * 1px);
+    top:  calc(var(--lessonTop) * 1px + 4 * var(--lessonDiffTop) * 1px + 70px);
 }
 
-#doz1 {
+#teacher1 {
     position: absolute;
-    left:  calc(var(--dozLeft) * 1px);
-    top:  calc(var(--dozTop) * 1px + 0 * var(--datumDiffTop) * 1px);
+    left:  calc(var(--teacherLeft) * 1px);
+    top:  calc(var(--teacherTop) * 1px + 0 * var(--datumDiffTop) * 1px);
 }
 
-#doz2 {
+#teacher2 {
     position: absolute;
-    left:  calc(var(--dozLeft) * 1px);
-    top:  calc(var(--dozTop) * 1px + 1 * var(--datumDiffTop) * 1px);
+    left:  calc(var(--teacherLeft) * 1px);
+    top:  calc(var(--teacherTop) * 1px + 1 * var(--datumDiffTop) * 1px);
 }
 
-#doz3 {
+#teacher3 {
     position: absolute;
-    left:  calc(var(--dozLeft) * 1px);
-    top:  calc(var(--dozTop) * 1px + 2 * var(--datumDiffTop) * 1px);
+    left:  calc(var(--teacherLeft) * 1px);
+    top:  calc(var(--teacherTop) * 1px + 2 * var(--datumDiffTop) * 1px);
 }
 
-#doz4 {
+#teacher4 {
     position: absolute;
-    left:  calc(var(--dozLeft) * 1px);
-    top:  calc(var(--dozTop) * 1px + 3 * var(--datumDiffTop) * 1px);
+    left:  calc(var(--teacherLeft) * 1px);
+    top:  calc(var(--teacherTop) * 1px + 3 * var(--datumDiffTop) * 1px);
 }
 
-#doz5 {
+#teacher5 {
     position: absolute;
-    left:  calc(var(--dozLeft) * 1px);
-    top:  calc(var(--dozTop) * 1px + 4 * var(--datumDiffTop) * 1px);
+    left:  calc(var(--teacherLeft) * 1px);
+    top:  calc(var(--teacherTop) * 1px + 4 * var(--datumDiffTop) * 1px);
 }
