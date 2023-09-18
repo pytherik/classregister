@@ -97,5 +97,5 @@ $dozLeft = 2000;
 $dozTop = 599;
 
 // Ausgabeseite einbinden
-include 'view/oneweek.php';
+include 'view/testOneweek.php';
 
