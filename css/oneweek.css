@@ -45,51 +45,51 @@ body {
 }
 #thema {
     position: absolute;
-    left: var(--themaLeft)px;
-    top: var(--themaKwTop)px;
+    left: calc(var(--themaLeft) * 1px);
+    top: calc(var(--themaKwTop) * 1px);
     font-size: 46px;
 }
 
 #kw {
     position: absolute;
-    left: var(--kwLeft)px;
-    top:  calc(var(--themaKwTop) + 5)px;
+    left: calc(var(--kwLeft) * 1px);
+    top:  calc(var(--themaKwTop) * 1px + 5px);
 }
 
 #datum0 {
     position: absolute;
-    left:  var(--datumLeft)px;
-    top:  calc(var(--datumTop) + 0 * var(--datumDiffTop))px;
+    left:  calc(var(--datumLeft )* 1px);
+    top:  calc(var(--datumTop) * 1px + 0 * var(--datumDiffTop) * 1px);
 }
 
 #datum1 {
     position: absolute;
-    left:  var(--datumLeft)px;
-    top:  calc(var(--datumTop) + 1 * var(--datumDiffTop))px;
+    left:  calc(var(--datumLeft) * 1px);
+    top:  calc(var(--datumTop) * 1px + 1 * var(--datumDiffTop) * 1px);
 }
 
 #datum2 {
     position: absolute;
-    left:  var(--datumLeft)px;
-    top:  calc(var(--datumTop) + 2 * var(--datumDiffTop))px;
+    left:  calc(var(--datumLeft) * 1px);
+    top:  calc(var(--datumTop) * 1px + 2 * var(--datumDiffTop) * 1px);
 }
 
 #datum3 {
     position: absolute;
-    left:  var(--datumLeft)px;
-    top: calc(var(--datumTop) + 3 * var(--datumDiffTop))px;
+    left:  calc(var(--datumLeft) * 1px);
+    top: calc(var(--datumTop) * 1px + 3 * var(--datumDiffTop) * 1px);
 }
 
 #datum4 {
     position: absolute;
-    left:  var(--datumLeft)px;
-    top:  calc(var(--datumTop) + 4 * var(--datumDiffTop))px;
+    left:  calc(var(--datumLeft) * 1px);
+    top:  calc(var(--datumTop) * 1px + 4 * var(--datumDiffTop) * 1px);
 }
 
 #bem {
     position: absolute;
-    left:  var(--datumLeft)px;
-    top:  var(--bemTop)px;
+    left:  calc(var(--datumLeft)* 1px);
+    top:  calc(var(--bemTop) * 1px);
 }
 
 input {
@@ -103,90 +103,90 @@ input {
 
 #eintrag0 {
     position: absolute;
-    left: var(--eintragLeft)px;
-    top:  calc(var(--eintragTop) + 0 * var(--eintragDiffTop))px;
+    left: calc(var(--eintragLeft) * 1px);
+    top:  calc(var(--eintragTop) * 1px + 0 * var(--eintragDiffTop) * 1px);
 }
 
 #eintrag1 {
     position: absolute;
-    left:  var(--eintragLeft)px;
-    top:  calc(var(--eintragTop) + 0 * var(--eintragDiffTop) + 70)px;
+    left: calc(var(--eintragLeft) * 1px);
+    top:  calc(var(--eintragTop) * 1px + 0 * var(--eintragDiffTop) * 1px + 70px);
 }
 
 #eintrag2 {
     position: absolute;
-    left:  var(--eintragLeft)px;
-    top:  calc(var(--eintragTop) + 1 * var(--eintragDiffTop))px;
+    left: calc(var(--eintragLeft) * 1px);
+    top:  calc(var(--eintragTop) * 1px + 1 * var(--eintragDiffTop) * 1px);
 }
 
 #eintrag3 {
     position: absolute;
-    left:  var(--eintragLeft)px;
-    top:  calc(var(--eintragTop) + 1 * var(--eintragDiffTop) + 70)px;
+    left: calc(var(--eintragLeft) * 1px);
+    top:  calc(var(--eintragTop) * 1px + 1 * var(--eintragDiffTop) * 1px + 70px);
 }
 
 #eintrag4 {
     position: absolute;
-    left:  var(--eintragLeft)px;
-    top:  calc(var(--eintragTop) + 2 * var(--eintragDiffTop))px;
+    left: calc(var(--eintragLeft) * 1px);
+    top:  calc(var(--eintragTop) * 1px + 2 * var(--eintragDiffTop) * 1px);
 }
 
 #eintrag5 {
     position: absolute;
-    left:  var(--eintragLeft)px;
-    top:  calc(var(--eintragTop) + 2 * var(--eintragDiffTop) + 70)px;
+    left: calc(var(--eintragLeft) * 1px);
+    top:  calc(var(--eintragTop) * 1px + 2 * var(--eintragDiffTop) * 1px + 70px);
 }
 
 #eintrag6 {
     position: absolute;
-    left:  var(--eintragLeft)px;
-    top:  calc(var(--eintragTop) + 3 * var(--eintragDiffTop))px;
+    left: calc(var(--eintragLeft) * 1px);
+    top:  calc(var(--eintragTop) * 1px + 3 * var(--eintragDiffTop) * 1px);
 }
 
 #eintrag7 {
     position: absolute;
-    left:  var(--eintragLeft)px;
-    top:  calc(var(--eintragTop) + 3 * var(--eintragDiffTop) + 70)px;
+    left: calc(var(--eintragLeft) * 1px);
+    top:  calc(var(--eintragTop) * 1px + 3 * var(--eintragDiffTop) * 1px + 70px);
 }
 
 #eintrag8 {
     position: absolute;
-    left:  var(--eintragLeft)px;
-    top:  calc(var(--eintragTop) + 4 * var(--eintragDiffTop))px;
+    left: calc(var(--eintragLeft) * 1px);
+    top:  calc(var(--eintragTop) * 1px + 4 * var(--eintragDiffTop) * 1px);
 }
 
 #eintrag9 {
     position: absolute;
-    left:  var(--eintragLeft)px;
-    top:  calc(var(--eintragTop) + 4 * var(--eintragDiffTop) + 70)px;
+    left: calc(var(--eintragLeft) * 1px);
+    top:  calc(var(--eintragTop) * 1px + 4 * var(--eintragDiffTop) * 1px + 70px);
 }
 
 #doz1 {
     position: absolute;
-    left:  var(--dozLeft)px;
-    top:  calc(var(--dozTop) + 0 * var(--datumDiffTop))px;
+    left:  calc(var(--dozLeft) * 1px);
+    top:  calc(var(--dozTop) * 1px + 0 * var(--datumDiffTop) * 1px);
 }
 
 #doz2 {
     position: absolute;
-    left:  var(--dozLeft)px;
-    top:  calc(var(--dozTop) + 1 * var(--datumDiffTop))px;
+    left:  calc(var(--dozLeft) * 1px);
+    top:  calc(var(--dozTop) * 1px + 1 * var(--datumDiffTop) * 1px);
 }
 
 #doz3 {
     position: absolute;
-    left:  var(--dozLeft)px;
-    top:  calc(var(--dozTop) + 2 * var(--datumDiffTop))px;
+    left:  calc(var(--dozLeft) * 1px);
+    top:  calc(var(--dozTop) * 1px + 2 * var(--datumDiffTop) * 1px);
 }
 
 #doz4 {
     position: absolute;
-    left:  var(--dozLeft)px;
-    top:  calc(var(--dozTop) + 3 * var(--datumDiffTop))px;
+    left:  calc(var(--dozLeft) * 1px);
+    top:  calc(var(--dozTop) * 1px + 3 * var(--datumDiffTop) * 1px);
 }
 
 #doz5 {
     position: absolute;
-    left:  var(--dozLeft)px;
-    top:  calc(var(--dozTop) + 4 * var(--datumDiffTop))px;
+    left:  calc(var(--dozLeft) * 1px);
+    top:  calc(var(--dozTop) * 1px + 4 * var(--datumDiffTop) * 1px);
 }
