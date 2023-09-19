@@ -9,7 +9,6 @@ spl_autoload_register(function ($class) {
 //echo '<pre>';
 //print_r($_POST);
 //echo '</pre>';
-var_dump($_POST);
 
 // postVar Empfang
 $id = $_POST['id'] ?? 0; // ist bzw. PK vom Week-Objekt

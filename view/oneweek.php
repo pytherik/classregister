@@ -191,6 +191,9 @@
             align-items: center;
         }
 
+        label {
+            font-family: Calibri;
+        }
         .checkbox2 {
             position: absolute;
             left: 1730px;

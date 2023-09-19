@@ -13,6 +13,18 @@
     --teacherTop: 599;
 }
 
+@font-face {
+    font-family: myCalibriFont;
+    src: url('../fonts/Calibri.eot');
+    src: local('Calibri'),
+    url('../fonts/Calibri.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/calibri.woff2') format('woff2'),
+    url('../fonts/Calibri.woff') format('woff'),
+    url('../fonts/Calibri.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: white;
     background-image: url("../img/Klassenbuch.png");
