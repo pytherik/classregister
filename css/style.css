@@ -18,6 +18,10 @@ body {
     background-image: url('../img/Klassenbuch.png');
 }
 
+label {
+    font-family: Calibri, sans-serif;
+}
+
 #next{
     position: absolute;
     left: 1000px;

@@ -58,7 +58,7 @@ $lessons = $requestWeek->getLessonsByCalWeekId();
 $notice = $requestWeek->getNotice();
 // Dozent
 $teacher = $requestWeek->getTeacher();
-
+// Unterrichtsmethode
 $methods = $requestWeek->getMethodsByCalWeekId();
 
 // Datum erstellen aus KW und Kalenderjahr für jeweiliges Tagesdatum
