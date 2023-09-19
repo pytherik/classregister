@@ -83,19 +83,7 @@ for ($i = 1; $i < 5; $i++) {
     array_push($datum, $date->format('d.m.Y'));
 }
 
-//Layoutwerte (für CSS)
-$themaLeft = 400;
-$themaKwTop = 355;
-$kwLeft = 2100;
-$datumLeft = 370;
-$datumTop = 558;
-$datumDiffTop = 155;
-$eintragLeft = 570;
-$eintragTop = 559;
-$eintragDiffTop = 155;
-$bemTop = 1400;
-$dozLeft = 2000;
-$dozTop = 599;
+
 
 // Ausgabeseite einbinden
 include 'view/oneweek.php';

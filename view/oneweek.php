@@ -215,6 +215,7 @@
             align-items: center;
         }
     </style>
+    <link rel="stylesheet" href="css/oneweek.css">
 </head>
 <body>
 <div id="container">
