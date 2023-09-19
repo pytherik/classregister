@@ -182,6 +182,38 @@
             left: <?php echo $dozLeft; ?>px;
             top: <?php echo ($dozTop + 4 * $datumDiffTop); ?>px;
         }
+
+        .checkbox1 {
+            position: absolute;
+            left: 1730px;
+            top: 550px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox2 {
+            position: absolute;
+            left: 1730px;
+            top: 575px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox3 {
+            position: absolute;
+            left: 1730px;
+            top: 620px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox4 {
+            position: absolute;
+            left: 1730px;
+            top: 645px;
+            display: flex;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -241,6 +273,26 @@
         <div id="lesson9"><input name="lesson[]" type="text" style="width: 1200px;"
                                   value="<?php
                                   echo $lesson[4]->getPmContent(); ?>"></div>
+
+        <div id="FormOfInstruction1" class="checkbox1">
+            <input type="checkbox" name="checkbox[]" value="Frontalunterricht">
+            <label for="FormOfInstruction">Frontalunterricht</label>
+        </div>
+
+        <div id="FormOfInstruction2" class="checkbox2">
+            <input type="checkbox" name="checkbox[]" value="Projektarbeit">
+            <label for="FormOfInstruction">Projektarbeit</label>
+        </div>
+
+        <div id="FormOfInstruction3" class="checkbox3">
+            <input type="checkbox" name="checkbox[]" value="Gruppenarbeit">
+            <label for="FormOfInstruction">Gruppenarbeit</label>
+        </div>
+
+        <div id="FormOfInstruction4" class="checkbox4">
+            <input type="checkbox" name="checkbox[]" value="Selbstlernphase">
+            <label for="FormOfInstruction">Selbstlernphase</label>
+        </div>
         <!-- Dozenten -->
         <div id="teacher1"><input type="text" name="teacher[]" value="<?php
             echo $teacher; ?>"></div>
