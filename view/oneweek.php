@@ -63,6 +63,17 @@
         <div id="lesson9"><input name="lesson[]" type="text" style="width: 1200px;"
                                   value="<?php
                                   echo $lesson[4]->getPmContent(); ?>"></div>
+
+        <!-- Module -->
+                <?php
+                foreach($options as $index => $option) {
+                    echo "<div id=\"FormOfInstruction" . ($index + 1) . "\" class=\"checkbox" . ($index + 1) . "\">";
+                    echo "<input type=\"checkbox\" name=\"checkbox[]\" value=\"" . $option . "\">";
+                    echo "<label for=\"FormOfInstruction\">" . $option . "</label>";
+                    echo "</div>";
+                }
+                ?>
+
         <!-- Dozenten -->
         <div id="teacher1"><input type="text" name="teacher[]" value="<?php
             echo $teacher; ?>"></div>
