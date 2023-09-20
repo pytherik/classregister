@@ -11,7 +11,7 @@
     --bemTop: 1400;
     --teacherLeft: 2000;
     --teacherTop: 599;
-    --lessionContentLength: 1100px;
+    --lessionContentLength: 1000px;
     --teacherInputLenght: 175px;
 }
 
@@ -228,4 +228,144 @@ input {
     left: 1675px;
     display: flex;
     align-items: center;
+}
+#checkbox11{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 547px;
+}
+#checkbox12{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 577px;
+}
+#checkbox13{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 610px;
+}
+#checkbox14{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 642px;
+}
+#checkbox21{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 702px;
+}
+#checkbox22{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 739px;
+}
+#checkbox23{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 768px;
+}
+#checkbox24{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 800px;
+}
+#checkbox31{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 860px;
+}
+#checkbox32{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 897px;
+}
+#checkbox33{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 927px;
+}
+#checkbox34 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 957px;
+}
+#checkbox41{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 1020px;
+}
+#checkbox42{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 1050px;
+}
+#checkbox43{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 1085px;
+}
+#checkbox44 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 1117px;
+}
+#checkbox51{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1620px;
+    top: 1178px;
+}
+#checkbox52{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 1210px;
+}
+#checkbox53{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 1240px;
+}
+#checkbox54 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1622px;
+    top: 1274px;
 }
