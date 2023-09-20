@@ -198,28 +198,24 @@ label {
 .checkbox1 {
     position: absolute;
     left: 1730px;
-    top: 550px;
     display: flex;
     align-items: center;
 }
 .checkbox2 {
     position: absolute;
     left: 1730px;
-    top: 575px;
     display: flex;
     align-items: center;
 }
 .checkbox3 {
     position: absolute;
     left: 1730px;
-    top: 620px;
     display: flex;
     align-items: center;
 }
 .checkbox4 {
     position: absolute;
     left: 1730px;
-    top: 645px;
     display: flex;
     align-items: center;
 }

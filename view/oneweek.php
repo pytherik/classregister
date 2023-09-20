@@ -66,11 +66,16 @@
 
         <!-- Module -->
                 <?php
-                foreach($options as $index => $option) {
-                    echo "<div id=\"FormOfInstruction" . ($index + 1) . "\" class=\"checkbox" . ($index + 1) . "\">";
-                    echo "<input type=\"checkbox\" name=\"checkbox[]\" value=\"" . $option . "\">";
-                    echo "<label for=\"FormOfInstruction\">" . $option . "</label>";
-                    echo "</div>";
+                $top_position = 560; // Startposition
+                for ($i = 0; $i < 5; $i++) {
+                    foreach ($options as $index => $option) {
+                        echo "<div id=\"FormOfInstruction" . ($index + 1) . "\" class=\"checkbox" . ($index + 1) . "\" style=\"top: " . $top_position . "px;\">";
+                        echo "<input type=\"checkbox\" name=\"checkbox[]\" value=\"" . $option . "\">";
+                        echo "<label for=\"FormOfInstruction\">" . $option . "</label>";
+                        echo "</div>";
+                        $top_position += 25;
+                    }
+                    $top_position += 57;
                 }
                 ?>
 
