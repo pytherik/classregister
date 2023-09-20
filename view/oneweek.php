@@ -65,22 +65,13 @@
                                  echo $lesson[4]->getPmContent(); ?>"></div>
 
         <!-- Module -->
-                <?php
-                $top_position = 550; // Startposition
-                for ($i = 0; $i < 5; $i++) {
-                    foreach ($options as $index => $option) {
-                        echo "<div id=\"FormOfInstruction" . ($index + 1) . "\" class=\"checkbox" . ($index + 1) . "\" style=\"top: " . $top_position . "px;\">";
-                        echo "<input type=\"checkbox\" name=\"checkbox[]\" value=\"" . $option . "\">";
-                        echo "<label for=\"FormOfInstruction\">" . $option . "</label>";
-                        echo "</div>";
-                        $top_position += 20;
-                        if ($index == 1) {
-                            $top_position += 21;
-                        }
+            <?php
+                for($i=1;$i<=5;$i++){
+                    for ($j=1;$j<=4;$j++){
+                        echo '<input type="checkbox" id="checkbox'.$i.$j.'" name="">'.'<br>';
                     }
-                    $top_position += 57;
                 }
-                ?>
+            ?>
 
         <!-- Dozenten -->
         <div id="teacher1"><input type="text" style="width: var(--teacherInputLenght);" name="teacher[]" value="<?php
