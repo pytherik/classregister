@@ -11,6 +11,8 @@
     --bemTop: 1400;
     --teacherLeft: 2000;
     --teacherTop: 599;
+    --lessionContentLength: 1100px;
+    --teacherInputLenght: 175px;
 }
 
 body {
@@ -191,35 +193,35 @@ input {
     top:  calc(var(--teacherTop) * 1px + 4 * var(--datumDiffTop) * 1px);
 }
 
-label {
-    font-family: Calibri, sans-serif;
-}
-
 .checkbox1 {
+    font-family: Calibri, sans-serif;
+    font-size: 22px;
     position: absolute;
-    left: 1730px;
-    top: 550px;
+    left: 1675px;
     display: flex;
     align-items: center;
 }
 .checkbox2 {
+    font-family: Calibri, sans-serif;
+    font-size: 22px;
     position: absolute;
-    left: 1730px;
-    top: 575px;
+    left: 1675px;
     display: flex;
     align-items: center;
 }
 .checkbox3 {
+    font-family: Calibri, sans-serif;
+    font-size: 22px;
     position: absolute;
-    left: 1730px;
-    top: 620px;
+    left: 1675px;
     display: flex;
     align-items: center;
 }
 .checkbox4 {
+    font-family: Calibri, sans-serif;
+    font-size: 22px;
     position: absolute;
-    left: 1730px;
-    top: 645px;
+    left: 1675px;
     display: flex;
     align-items: center;
 }
