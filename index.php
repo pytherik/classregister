@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include 'config2.php';
 spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
