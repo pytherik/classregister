@@ -11,6 +11,8 @@
     --bemTop: 1400;
     --teacherLeft: 2000;
     --teacherTop: 599;
+    --lessionContentLength: 1100px;
+    --teacherInputLenght: 175px;
 }
 
 body {
