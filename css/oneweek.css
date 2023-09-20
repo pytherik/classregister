@@ -18,6 +18,10 @@
 body {
     background-color: white;
     background-image: url("../img/Klassenbuch.png");
+    background-repeat: no-repeat;
+    background-size: 2350px;
+    /*background-attachment: fixed;*/
+    background-position: -2% 0%;
 }
 
 @media print
